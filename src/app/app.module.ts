@@ -12,6 +12,7 @@ import { ManageBrandComponent } from './admin/manage-brand/manage-brand.componen
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { AdduserComponent } from './admin/manage-user/adduser/adduser.component';
 import { ListuserComponent } from './admin/manage-user/listuser/listuser.component';
+import { UpduserComponent } from './admin/manage-user/upduser/upduser.component';
 
 
 
@@ -27,6 +28,7 @@ import { ListuserComponent } from './admin/manage-user/listuser/listuser.compone
     DashboardComponent,
     AdduserComponent,
     ListuserComponent,
+    UpduserComponent,
 
   ],
   imports: [

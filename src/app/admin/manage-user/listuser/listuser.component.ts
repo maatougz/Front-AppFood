@@ -15,6 +15,9 @@ export class ListuserComponent implements OnInit {
 
   adduser() {
     this.router.navigate(['admin/user/add']);
-    console.log("fhsdfh")
+  }
+
+  upduser() {
+    this.router.navigate(['admin/user/upd']);
   }
 }
