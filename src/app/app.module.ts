@@ -13,6 +13,9 @@ import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { AdduserComponent } from './admin/manage-user/adduser/adduser.component';
 import { ListuserComponent } from './admin/manage-user/listuser/listuser.component';
 import { UpduserComponent } from './admin/manage-user/upduser/upduser.component';
+import { ListbrandComponent } from './admin/manage-brand/listbrand/listbrand.component';
+import { AddbrandComponent } from './admin/manage-brand/addbrand/addbrand.component';
+import { UpdbrandComponent } from './admin/manage-brand/updbrand/updbrand.component';
 
 
 
@@ -29,6 +32,9 @@ import { UpduserComponent } from './admin/manage-user/upduser/upduser.component'
     AdduserComponent,
     ListuserComponent,
     UpduserComponent,
+    ListbrandComponent,
+    AddbrandComponent,
+    UpdbrandComponent,
 
   ],
   imports: [
