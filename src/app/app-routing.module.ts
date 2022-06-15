@@ -8,6 +8,9 @@ import { UpdbrandComponent } from './admin/manage-brand/updbrand/updbrand.compon
 import { AdddishCatComponent } from './admin/manage-dish-cat/adddish-cat/adddish-cat.component';
 import { ListdishCatComponent } from './admin/manage-dish-cat/listdish-cat/listdish-cat.component';
 import { UpddishCatComponent } from './admin/manage-dish-cat/upddish-cat/upddish-cat.component';
+import { AdddishComponent } from './admin/manage-dish/adddish/adddish.component';
+import { ListdishComponent } from './admin/manage-dish/listdish/listdish.component';
+import { UpddishComponent } from './admin/manage-dish/upddish/upddish.component';
 import { AddplaceCatComponent } from './admin/manage-place-cat/addplace-cat/addplace-cat.component';
 import { ListplaceCatComponent } from './admin/manage-place-cat/listplace-cat/listplace-cat.component';
 import { UpdplaceCatComponent } from './admin/manage-place-cat/updplace-cat/updplace-cat.component';
@@ -39,7 +42,9 @@ const routes: Routes = [
       {path: 'resto', component: ListrestoComponent,},
       {path: 'resto/add', component: AddrestoComponent,},
       {path: 'resto/upd', component: UpdrestoComponent,},
-      
+      {path: 'dish', component: ListdishComponent,},
+      {path: 'dish/add', component: AdddishComponent,},
+      {path: 'dish/upd', component: UpddishComponent,},
       
     ],
   },

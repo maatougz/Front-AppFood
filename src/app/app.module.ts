@@ -28,6 +28,10 @@ import { ManageRestoComponent } from './admin/manage-resto/manage-resto.componen
 import { ListrestoComponent } from './admin/manage-resto/listresto/listresto.component';
 import { AddrestoComponent } from './admin/manage-resto/addresto/addresto.component';
 import { UpdrestoComponent } from './admin/manage-resto/updresto/updresto.component';
+import { ManageDishComponent } from './admin/manage-dish/manage-dish.component';
+import { AdddishComponent } from './admin/manage-dish/adddish/adddish.component';
+import { ListdishComponent } from './admin/manage-dish/listdish/listdish.component';
+import { UpddishComponent } from './admin/manage-dish/upddish/upddish.component';
 
 
 
@@ -59,6 +63,10 @@ import { UpdrestoComponent } from './admin/manage-resto/updresto/updresto.compon
     ListrestoComponent,
     AddrestoComponent,
     UpdrestoComponent,
+    ManageDishComponent,
+    AdddishComponent,
+    ListdishComponent,
+    UpddishComponent,
 
   ],
   imports: [
