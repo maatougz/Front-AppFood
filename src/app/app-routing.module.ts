@@ -5,6 +5,9 @@ import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { AddbrandComponent } from './admin/manage-brand/addbrand/addbrand.component';
 import { ListbrandComponent } from './admin/manage-brand/listbrand/listbrand.component';
 import { UpdbrandComponent } from './admin/manage-brand/updbrand/updbrand.component';
+import { AdddishCatComponent } from './admin/manage-dish-cat/adddish-cat/adddish-cat.component';
+import { ListdishCatComponent } from './admin/manage-dish-cat/listdish-cat/listdish-cat.component';
+import { UpddishCatComponent } from './admin/manage-dish-cat/upddish-cat/upddish-cat.component';
 import { AddplaceCatComponent } from './admin/manage-place-cat/addplace-cat/addplace-cat.component';
 import { ListplaceCatComponent } from './admin/manage-place-cat/listplace-cat/listplace-cat.component';
 import { UpdplaceCatComponent } from './admin/manage-place-cat/updplace-cat/updplace-cat.component';
@@ -27,6 +30,10 @@ const routes: Routes = [
       {path: 'placecat', component: ListplaceCatComponent,},
       {path: 'placecat/add', component: AddplaceCatComponent,},
       {path: 'placecat/upd', component: UpdplaceCatComponent,},
+      {path: 'dishcat', component: ListdishCatComponent,},
+      {path: 'dishcat/add', component: AdddishCatComponent,},
+      {path: 'dishcat/upd', component: UpddishCatComponent,},
+      
       
     ],
   },
