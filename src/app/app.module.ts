@@ -24,6 +24,10 @@ import { UpdplaceCatComponent } from './admin/manage-place-cat/updplace-cat/updp
 import { UpddishCatComponent } from './admin/manage-dish-cat/upddish-cat/upddish-cat.component';
 import { AdddishCatComponent } from './admin/manage-dish-cat/adddish-cat/adddish-cat.component';
 import { ListdishCatComponent } from './admin/manage-dish-cat/listdish-cat/listdish-cat.component';
+import { ManageRestoComponent } from './admin/manage-resto/manage-resto.component';
+import { ListrestoComponent } from './admin/manage-resto/listresto/listresto.component';
+import { AddrestoComponent } from './admin/manage-resto/addresto/addresto.component';
+import { UpdrestoComponent } from './admin/manage-resto/updresto/updresto.component';
 
 
 
@@ -51,6 +55,10 @@ import { ListdishCatComponent } from './admin/manage-dish-cat/listdish-cat/listd
     UpddishCatComponent,
     AdddishCatComponent,
     ListdishCatComponent,
+    ManageRestoComponent,
+    ListrestoComponent,
+    AddrestoComponent,
+    UpdrestoComponent,
 
   ],
   imports: [
