@@ -16,6 +16,11 @@ import { UpduserComponent } from './admin/manage-user/upduser/upduser.component'
 import { ListbrandComponent } from './admin/manage-brand/listbrand/listbrand.component';
 import { AddbrandComponent } from './admin/manage-brand/addbrand/addbrand.component';
 import { UpdbrandComponent } from './admin/manage-brand/updbrand/updbrand.component';
+import { ManagePlaceCatComponent } from './admin/manage-place-cat/manage-place-cat.component';
+import { ManageDishCatComponent } from './admin/manage-dish-cat/manage-dish-cat.component';
+import { AddplaceCatComponent } from './admin/manage-place-cat/addplace-cat/addplace-cat.component';
+import { ListplaceCatComponent } from './admin/manage-place-cat/listplace-cat/listplace-cat.component';
+import { UpdplaceCatComponent } from './admin/manage-place-cat/updplace-cat/updplace-cat.component';
 
 
 
@@ -35,6 +40,11 @@ import { UpdbrandComponent } from './admin/manage-brand/updbrand/updbrand.compon
     ListbrandComponent,
     AddbrandComponent,
     UpdbrandComponent,
+    ManagePlaceCatComponent,
+    ManageDishCatComponent,
+    AddplaceCatComponent,
+    ListplaceCatComponent,
+    UpdplaceCatComponent,
 
   ],
   imports: [
