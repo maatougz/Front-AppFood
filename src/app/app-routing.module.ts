@@ -14,6 +14,9 @@ import { UpddishComponent } from './admin/manage-dish/upddish/upddish.component'
 import { AddplaceCatComponent } from './admin/manage-place-cat/addplace-cat/addplace-cat.component';
 import { ListplaceCatComponent } from './admin/manage-place-cat/listplace-cat/listplace-cat.component';
 import { UpdplaceCatComponent } from './admin/manage-place-cat/updplace-cat/updplace-cat.component';
+import { AddrecipeComponent } from './admin/manage-recipe/addrecipe/addrecipe.component';
+import { ListrecipeComponent } from './admin/manage-recipe/listrecipe/listrecipe.component';
+import { UpdrecipeComponent } from './admin/manage-recipe/updrecipe/updrecipe.component';
 import { AddrestoComponent } from './admin/manage-resto/addresto/addresto.component';
 import { ListrestoComponent } from './admin/manage-resto/listresto/listresto.component';
 import { UpdrestoComponent } from './admin/manage-resto/updresto/updresto.component';
@@ -45,7 +48,9 @@ const routes: Routes = [
       {path: 'dish', component: ListdishComponent,},
       {path: 'dish/add', component: AdddishComponent,},
       {path: 'dish/upd', component: UpddishComponent,},
-      
+      {path: 'recipe', component: ListrecipeComponent,},
+      {path: 'recipe/add', component: AddrecipeComponent,},
+      {path: 'recipe/upd', component: UpdrecipeComponent,},
     ],
   },
 ];

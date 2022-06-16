@@ -32,6 +32,10 @@ import { ManageDishComponent } from './admin/manage-dish/manage-dish.component';
 import { AdddishComponent } from './admin/manage-dish/adddish/adddish.component';
 import { ListdishComponent } from './admin/manage-dish/listdish/listdish.component';
 import { UpddishComponent } from './admin/manage-dish/upddish/upddish.component';
+import { ManageRecipeComponent } from './admin/manage-recipe/manage-recipe.component';
+import { ListrecipeComponent } from './admin/manage-recipe/listrecipe/listrecipe.component';
+import { AddrecipeComponent } from './admin/manage-recipe/addrecipe/addrecipe.component';
+import { UpdrecipeComponent } from './admin/manage-recipe/updrecipe/updrecipe.component';
 
 
 
@@ -67,6 +71,10 @@ import { UpddishComponent } from './admin/manage-dish/upddish/upddish.component'
     AdddishComponent,
     ListdishComponent,
     UpddishComponent,
+    ManageRecipeComponent,
+    ListrecipeComponent,
+    AddrecipeComponent,
+    UpdrecipeComponent,
 
   ],
   imports: [
