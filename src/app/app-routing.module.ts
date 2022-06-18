@@ -20,7 +20,10 @@ import { UpdrecipeComponent } from './admin/manage-recipe/updrecipe/updrecipe.co
 import { AddrestoComponent } from './admin/manage-resto/addresto/addresto.component';
 import { ListrestoComponent } from './admin/manage-resto/listresto/listresto.component';
 import { UpdrestoComponent } from './admin/manage-resto/updresto/updresto.component';
+import { ListreviewComponent } from './admin/manage-review/listreview/listreview.component';
+import { AddroleComponent } from './admin/manage-user/addrole/addrole.component';
 import { AdduserComponent } from './admin/manage-user/adduser/adduser.component';
+import { ListroleComponent } from './admin/manage-user/listrole/listrole.component';
 import { ListuserComponent } from './admin/manage-user/listuser/listuser.component';
 import { UpduserComponent } from './admin/manage-user/upduser/upduser.component';
 import { AppComponent } from './app.component';
@@ -30,7 +33,9 @@ const routes: Routes = [
   { path: 'admin', component: AdminComponent,
     children:[
       {path: '', component: DashboardComponent,},
-      {path: 'user', component: ListuserComponent,},
+      {path: 'user/list', component: ListuserComponent,},
+      {path: 'user/listrole', component: ListroleComponent,},
+      {path: 'user/addrole', component: AddroleComponent,},
       {path: 'user/add', component: AdduserComponent,},
       {path: 'user/upd', component: UpduserComponent,},
       {path: 'brand', component: ListbrandComponent,},
@@ -51,6 +56,8 @@ const routes: Routes = [
       {path: 'recipe', component: ListrecipeComponent,},
       {path: 'recipe/add', component: AddrecipeComponent,},
       {path: 'recipe/upd', component: UpdrecipeComponent,},
+      {path: 'review', component: ListreviewComponent,},
+
     ],
   },
 ];

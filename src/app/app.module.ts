@@ -36,7 +36,10 @@ import { ManageRecipeComponent } from './admin/manage-recipe/manage-recipe.compo
 import { ListrecipeComponent } from './admin/manage-recipe/listrecipe/listrecipe.component';
 import { AddrecipeComponent } from './admin/manage-recipe/addrecipe/addrecipe.component';
 import { UpdrecipeComponent } from './admin/manage-recipe/updrecipe/updrecipe.component';
-
+import { ManageReviewComponent } from './admin/manage-review/manage-review.component';
+import { ListreviewComponent } from './admin/manage-review/listreview/listreview.component';
+import { ListroleComponent } from './admin/manage-user/listrole/listrole.component';
+import { AddroleComponent } from './admin/manage-user/addrole/addrole.component';
 
 
 @NgModule({
@@ -75,6 +78,11 @@ import { UpdrecipeComponent } from './admin/manage-recipe/updrecipe/updrecipe.co
     ListrecipeComponent,
     AddrecipeComponent,
     UpdrecipeComponent,
+    ManageReviewComponent,
+    ListreviewComponent,
+    ListroleComponent,
+    AddroleComponent,
+ 
 
   ],
   imports: [
