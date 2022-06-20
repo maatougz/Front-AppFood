@@ -27,6 +27,9 @@ import { ListroleComponent } from './admin/manage-user/listrole/listrole.compone
 import { ListuserComponent } from './admin/manage-user/listuser/listuser.component';
 import { UpduserComponent } from './admin/manage-user/upduser/upduser.component';
 import { AppComponent } from './app.component';
+import { ContactComponent } from './user/contact/contact.component';
+import { IndexComponent } from './user/index/index.component';
+import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
   { path: '', component: AppComponent },
@@ -60,6 +63,14 @@ const routes: Routes = [
 
     ],
   },
+  { path: 'user', component: UserComponent,
+    children:[
+      {path: '', component: IndexComponent,},
+      {path: 'contact', component: ContactComponent,},
+      
+    ],
+  
+  }
 ];
 
 @NgModule({

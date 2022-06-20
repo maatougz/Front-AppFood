@@ -40,6 +40,11 @@ import { ManageReviewComponent } from './admin/manage-review/manage-review.compo
 import { ListreviewComponent } from './admin/manage-review/listreview/listreview.component';
 import { ListroleComponent } from './admin/manage-user/listrole/listrole.component';
 import { AddroleComponent } from './admin/manage-user/addrole/addrole.component';
+import { UserComponent } from './user/user.component';
+import { IndexComponent } from './user/index/index.component';
+import { ContactComponent } from './user/contact/contact.component';
+import { UfooterComponent } from './user/ufooter/ufooter.component';
+import { UnavbarComponent } from './user/unavbar/unavbar.component';
 
 
 @NgModule({
@@ -82,6 +87,11 @@ import { AddroleComponent } from './admin/manage-user/addrole/addrole.component'
     ListreviewComponent,
     ListroleComponent,
     AddroleComponent,
+    UserComponent,
+    IndexComponent,
+    ContactComponent,
+    UfooterComponent,
+    UnavbarComponent,
  
 
   ],
