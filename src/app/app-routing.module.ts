@@ -32,6 +32,8 @@ import { BrandComponent } from './user/brand/brand.component';
 import { ContactComponent } from './user/contact/contact.component';
 import { IndexComponent } from './user/index/index.component';
 import { RecipeComponent } from './user/recipe/recipe.component';
+import { RecipeaddComponent } from './user/recipe/recipeadd/recipeadd.component';
+import { RecipelistComponent } from './user/recipe/recipelist/recipelist.component';
 import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
@@ -72,9 +74,9 @@ const routes: Routes = [
       {path: 'contact', component: ContactComponent,},
       {path: 'about', component: AboutUsComponent,},
       {path: 'brands', component: BrandComponent,},
-      {path: 'recipes', component: RecipeComponent,},
+      {path: 'recipes', component: RecipelistComponent,},
+      {path: 'recipe/add', component: RecipeaddComponent,},
     ],
-  
   }
 ];
 

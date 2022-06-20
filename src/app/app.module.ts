@@ -48,6 +48,8 @@ import { UnavbarComponent } from './user/unavbar/unavbar.component';
 import { BrandComponent } from './user/brand/brand.component';
 import { RecipeComponent } from './user/recipe/recipe.component';
 import { AboutUsComponent } from './user/about-us/about-us.component';
+import { RecipelistComponent } from './user/recipe/recipelist/recipelist.component';
+import { RecipeaddComponent } from './user/recipe/recipeadd/recipeadd.component';
 
 
 
@@ -99,6 +101,8 @@ import { AboutUsComponent } from './user/about-us/about-us.component';
     BrandComponent,
     RecipeComponent,
     AboutUsComponent,
+    RecipelistComponent,
+    RecipeaddComponent,
 
 
   ],
