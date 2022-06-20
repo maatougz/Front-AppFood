@@ -45,6 +45,10 @@ import { IndexComponent } from './user/index/index.component';
 import { ContactComponent } from './user/contact/contact.component';
 import { UfooterComponent } from './user/ufooter/ufooter.component';
 import { UnavbarComponent } from './user/unavbar/unavbar.component';
+import { BrandComponent } from './user/brand/brand.component';
+import { RecipeComponent } from './user/recipe/recipe.component';
+import { AboutUsComponent } from './user/about-us/about-us.component';
+
 
 
 @NgModule({
@@ -92,7 +96,10 @@ import { UnavbarComponent } from './user/unavbar/unavbar.component';
     ContactComponent,
     UfooterComponent,
     UnavbarComponent,
- 
+    BrandComponent,
+    RecipeComponent,
+    AboutUsComponent,
+
 
   ],
   imports: [
