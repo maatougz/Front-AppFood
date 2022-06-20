@@ -28,8 +28,10 @@ import { ListuserComponent } from './admin/manage-user/listuser/listuser.compone
 import { UpduserComponent } from './admin/manage-user/upduser/upduser.component';
 import { AppComponent } from './app.component';
 import { AboutUsComponent } from './user/about-us/about-us.component';
+import { BrandComponent } from './user/brand/brand.component';
 import { ContactComponent } from './user/contact/contact.component';
 import { IndexComponent } from './user/index/index.component';
+import { RecipeComponent } from './user/recipe/recipe.component';
 import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
@@ -69,7 +71,8 @@ const routes: Routes = [
       {path: '', component: IndexComponent,},
       {path: 'contact', component: ContactComponent,},
       {path: 'about', component: AboutUsComponent,},
-      
+      {path: 'brands', component: BrandComponent,},
+      {path: 'recipes', component: RecipeComponent,},
     ],
   
   }
