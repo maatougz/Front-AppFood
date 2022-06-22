@@ -50,6 +50,7 @@ import { RecipeComponent } from './user/recipe/recipe.component';
 import { AboutUsComponent } from './user/about-us/about-us.component';
 import { RecipelistComponent } from './user/recipe/recipelist/recipelist.component';
 import { RecipeaddComponent } from './user/recipe/recipeadd/recipeadd.component';
+import { OnerecipeComponent } from './user/recipe/onerecipe/onerecipe.component';
 
 
 
@@ -103,6 +104,7 @@ import { RecipeaddComponent } from './user/recipe/recipeadd/recipeadd.component'
     AboutUsComponent,
     RecipelistComponent,
     RecipeaddComponent,
+    OnerecipeComponent,
 
 
   ],

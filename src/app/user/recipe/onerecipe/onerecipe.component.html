@@ -1,0 +1,95 @@
+<section class="ftco-section ftco-degree-bg" style="margin-left:10% !important" >
+    <div class="container-fluid ">
+        <div class="row">
+            <div class="col-lg-8 order-lg-last ">
+                <ul class="comment-list">
+                    <li class="">
+                        <div class="vcard bio">
+                            <img  src="assets/images/person_1.jpg"  class="ml-4 mt-3" alt="Image placeholder" >
+                        </div>
+                        <div class="comment-body mt-2">
+                            <h5 th:text=${recipe.publisher.username} > Posted by : username</h5>
+                            <div class="meta">
+                                <span class="fa fa-chevron-circle-down" th:text=${recipe.dateofcreation}>15/06/2021</span>
+                                <hr> 	
+                            </div>
+                        </div>
+                    </li>
+                    <li> 
+                        <h3 th:text=${recipe.title} style="margin-left:5% ;"></h3>
+                    </li>
+                </ul>
+                <div class="box1">
+                    <h3 >Title</h3>
+                    <img th:if="${recipe.imgRecipe} != null" src="assets\images\work-2.jpg" alt="" class="img-fluid mb-8" style=" width: 450px ; height: 420px ;margin-left:30%  ">
+                    <!--<img th:if="${recipe.imgRecipe} == null" src="../../static/images/recipe.jpg" alt="" class="img-fluid mb-8" style=" width: 450px ; height: 420px ;margin-left:30%  ">-->
+                    
+                    <h6>dishcategory</h6>
+                    <h6>Preperation Time </h6>
+                    <p  th:text=${recipe.preparationTime} 	></p>
+                    <h6 >Ingredients </h6>
+                    <p  th:text=${recipe.ingredients} 	></p>
+                    <h6 >Description </h6>
+                    <p  th:text=${recipe.description} 	></p>
+                </div>
+                <br>
+                <div class="row box1">
+                </div>
+                <hr>
+                <div class="pt-5 mt-5 ">
+                    <h3> Reviews </h3>
+                    <br>
+                    <ul class="comment-list" >
+                        <div  th:each="review : ${recipe.reviews}">
+                            <li class="comment box1">
+                                <br>
+                                <div class="vcard bio" >
+                                    <img  src="assets\images\person_2.jpg"  class="ml-2" alt="Image placeholder">
+                                </div>
+                                <div class="comment-body">
+                                    <h3   style=" font-size :16px ; margin-top : 5px !important;" th:text=${review.user.username}></h3>
+                                    <div class="meta">
+                                        <span class="fa fa-chevron-circle-down" th:text="${review.dateofcreation}">12/03/2022</span>
+                                    </div>
+                                    <hr> 
+                                    <div th:if="${review.imgReview != null}" >
+                                        <img src="assets\images\image_5.jpg" alt="" class="img-fluid mb-8" style=" width: 200px ; height: 200px ">
+                                    </div>
+                                    <div style="color : #000000; font-size : 18px ; " th:text="${review.comment}">coment hxdjhqsd qsdqsd dshd ..
+                                    </div>
+                                    <hr>  
+                                    <p>
+                                        <a th:href="@{/user/recipe/{id}(id=${recipe.idrecipe})}" class="mr-4" cliked="false"><span class="fa fa-thumbs-up" aria-hidden="true" ></span> Like </a>
+                                        <a th:href="@{/user/recipe/{id}(id=${recipe.idrecipe})}" class="mr-4" cliked="false"><span class="fa fa-thumbs-down" aria-hidden="true" ></span> Dislike </a>
+                                        <a href="#" class="mr-4"><span class="fa fa-comment" aria-hidden="true"></span> report</a>
+                                        <a href="#" class="mr-4" style="color: grey; " >  <span class="fa fa-thumbs-up" aria-hidden="true" th:text="${review.nblike}" ></span></a> 
+                                        <a href="#" class="mr-4" style="color: grey "> <span class="fa fa-thumbs-down " aria-hidden="true" th:text="${review.nbdislike}" ></span></a>  
+                                    </p>
+                                </div>
+                            </li>
+                        </div>
+                    </ul>
+                    <div class="comment-form-wrap pt-5">
+                        <h3 class="mb-5">Leave a review</h3>
+                        <form action="#" class="p-5 bg-light">
+                            <div class="form-group">
+                                <label for="TitleReview">Add photo about your experience (optional) </label>
+                                <input type="file" class="form-control" id="titleReview">
+                            </div>
+                            <div class="form-group">
+                                <label for="review">Your review *</label>
+                                <textarea  class="form-control" cols="30" rows="10" th:field="${review.comment}" id="comment" name="comment" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <a th:href="@{/user/recipe/{id}(id=${recipe.idrecipe})}"  type="submit"  class="btn py-3 px-4 btn-primary">
+                                    Submit your review
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div> 
+            <!-- .col-md-8 -->
+        </div>
+    </div>
+</section> <!-- .section -->
