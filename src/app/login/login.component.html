@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Your Advancer</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		<link rel="stylesheet" href="/assets/css/animate.css">	
+		<link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
+		<link rel="stylesheet" href="/assets/css/owl.theme.default.min.css">
+		<link rel="stylesheet" href="/assets/css/magnific-popup.css">
+		<link rel="stylesheet" href="/assets/css/bootstrap-datepicker.css">
+		<link rel="stylesheet" href="/assets/css/jquery.timepicker.css">
+		<link rel="stylesheet" href="/assets/css/flaticon.css">
+		<link rel="stylesheet" href="/assets/css/style.css">
+		
+	</head>
+	<body>
+		<app-unavbar></app-unavbar>
+
+        <section class="ftco-section bg-light" >
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-9">
+                        <div class="wrapper">
+                            <div class="row no-gutters">
+                                <div class="col-md-6  d-flex">
+                                    <div class="contact-wrap w-100 p-md-5 p-4">
+                                        <h3 class="mb-4">Login</h3>
+                                        <form th:action="@{/Login}" method="POST" id="contactForm" class="contactForm">
+                                            <div class="row">
+                                                
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                    <!--    
+                                                        <div class="alert alert-primary" role="alert" th:text="${success}" th:if="${success}"></div>
+                                                        <div th:if="${param.error}" class="alert alert-error">    
+                                                            Invalid email or password.
+                                                        </div>
+                                                        <div th:if="${param.logout}" class="alert alert-success"> 
+                                                            You have been logged out.
+                                                        </div>
+                                                    -->
+                                                        <input type="email" class="form-control" name="email" id="email" placeholder="email">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12"> 
+                                                    <div class="form-group">
+                                                        <input type="password" class="form-control" name="password" id="" placeholder="Password">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <input type="submit" value="Login" class="btn btn-primary sign-up">
+                                                        <div class="submitting"></div>
+                                                    </div>
+                                                    <div>
+                                                        <a href="/forgotpass">Forgot your password ?</a>
+                                                    </div>
+                                                    <div>
+                                                        <a href="/Signup">Create An Account !</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 d-flex align-items-stretch">
+                                    <div class="info-wrap bg-primary w-100 p-lg-5 p-4">
+                                        <div class="sign-up">
+                                            <a class="btn btn-primary mt-5 " style=" background-color: #3B5998;  color: white;">
+                                                <span class="fa fa-facebook"> </span>  Login with Facebook 
+                                            </a>
+                                            <a class="btn btn-primary mt-4" style="    background-color: #55ACEE;  color: white;">
+                                                <span class="fa fa-twitter"></span> login with Twitter
+                                            </a>
+                                            <a class="btn btn-primary mt-4" style="  background-color: #dd4b39; color: white;">
+                                                <span class="fa fa-google"></span> login with Google +
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+		<app-ufooter></app-ufooter>
+		<script src="/assets/js/jquery.min.js"></script>
+		<script src="/assets/js/jquery-migrate-3.0.1.min.js"></script>
+		<script src="/assets/js/popper.min.js"></script>
+		<script src="/assets/js/bootstrap.min.js"></script>
+		<script src="/assets/js/jquery.easing.1.3.js"></script>
+		<script src="/assets/js/jquery.waypoints.min.js"></script>
+		<script src="/assets/js/jquery.stellar.min.js"></script>
+		<script src="/assets/js/jquery.animateNumber.min.js"></script>
+		<script src="/assets/js/bootstrap-datepicker.js"></script>
+		<script src="/assets/js/jquery.timepicker.min.js"></script>
+		<script src="/assets/js/owl.carousel.min.js"></script>
+		<script src="/assets/js/jquery.magnific-popup.min.js"></script>
+		<script src="/assets/js/scrollax.min.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+		<script src="/assets/js/google-map.js"></script>
+		<script src="/assets/js/main.js"></script>
+	</body>
+</html>	
+
