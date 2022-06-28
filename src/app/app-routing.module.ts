@@ -29,6 +29,7 @@ import { UpduserComponent } from './admin/manage-user/upduser/upduser.component'
 import { AppComponent } from './app.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { LoginComponent } from './login/login.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 import { AboutUsComponent } from './user/about-us/about-us.component';
 import { BrandComponent } from './user/brand/brand.component';
 import { ContactComponent } from './user/contact/contact.component';
@@ -83,7 +84,8 @@ const routes: Routes = [
     ],
   },
   { path: 'login', component: LoginComponent},
-  { path: 'forgotpass', component: ForgotPasswordComponent}
+  { path: 'forgotpass', component: ForgotPasswordComponent},
+  { path: 'signup', component: SignUpComponent}
 ];
 
 @NgModule({
