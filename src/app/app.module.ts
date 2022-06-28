@@ -54,6 +54,7 @@ import { OnerecipeComponent } from './user/recipe/onerecipe/onerecipe.component'
 import { LoginComponent } from './login/login.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { AccountComponent } from './user/account/account.component';
 
 
 
@@ -111,6 +112,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     LoginComponent,
     ForgotPasswordComponent,
     SignUpComponent,
+    AccountComponent,
 
 
   ],

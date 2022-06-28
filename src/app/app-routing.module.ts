@@ -31,6 +31,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { AboutUsComponent } from './user/about-us/about-us.component';
+import { AccountComponent } from './user/account/account.component';
 import { BrandComponent } from './user/brand/brand.component';
 import { ContactComponent } from './user/contact/contact.component';
 import { IndexComponent } from './user/index/index.component';
@@ -81,6 +82,7 @@ const routes: Routes = [
       {path: 'recipes', component: RecipelistComponent,},
       {path: 'recipe', component: OnerecipeComponent,},
       {path: 'recipe/add', component: RecipeaddComponent,},
+      {path: 'account', component: AccountComponent,},
     ],
   },
   { path: 'login', component: LoginComponent},
