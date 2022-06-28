@@ -52,6 +52,7 @@ import { RecipelistComponent } from './user/recipe/recipelist/recipelist.compone
 import { RecipeaddComponent } from './user/recipe/recipeadd/recipeadd.component';
 import { OnerecipeComponent } from './user/recipe/onerecipe/onerecipe.component';
 import { LoginComponent } from './login/login.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 
 
@@ -107,6 +108,7 @@ import { LoginComponent } from './login/login.component';
     RecipeaddComponent,
     OnerecipeComponent,
     LoginComponent,
+    ForgotPasswordComponent,
 
 
   ],

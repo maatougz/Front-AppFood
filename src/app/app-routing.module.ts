@@ -27,6 +27,7 @@ import { ListroleComponent } from './admin/manage-user/listrole/listrole.compone
 import { ListuserComponent } from './admin/manage-user/listuser/listuser.component';
 import { UpduserComponent } from './admin/manage-user/upduser/upduser.component';
 import { AppComponent } from './app.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { LoginComponent } from './login/login.component';
 import { AboutUsComponent } from './user/about-us/about-us.component';
 import { BrandComponent } from './user/brand/brand.component';
@@ -81,7 +82,8 @@ const routes: Routes = [
       {path: 'recipe/add', component: RecipeaddComponent,},
     ],
   },
-  { path: 'login', component: LoginComponent}
+  { path: 'login', component: LoginComponent},
+  { path: 'forgotpass', component: ForgotPasswordComponent}
 ];
 
 @NgModule({
