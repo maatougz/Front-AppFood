@@ -23,40 +23,42 @@
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form>
+                    
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="demo_overview">Select Brand</label>
-                                    <select id="demo_overview" class="form-control" data-role="select-dropdown">
+                                    <select id="demo_overview" [(ngModel)]="resto.brand" name="brandname" class="form-control" data-role="select-dropdown">
                                     <!-- options -->
-                                    <option value="DZ">KFC</option>
-                                    <option value="BH">Plan B</option>
-                                    <option value="BE">pizza slice</option>
-                                </select>
+                                    <option [ngValue]="">Please select Brand</option>
+                                    <option *ngFor="let brand of brands" [ngValue]="brand.brandname">
+                                        {{brand.brandname}}
+                                    </option>
+                                </select> 
                             </div>
                             <div class="form-group">
                                 <label for="demo_overview">Select Place Category</label>
-                                    <select id="demo_overview" class="form-control" data-role="select-dropdown">
-                                    <!-- options -->
-                                    <option value="DZ">9raya</option>
-                                    <option value="BH">3al b7ar</option>
-                                    <option value="BE">calme</option>
+                                    <select id="demo_overview" [(ngModel)]="resto.placecategory" name="pcatname" class="form-control" data-role="select-dropdown">
+                    
+                                    <option [ngValue]="">Please select placecat</option>
+                                    <option *ngFor="let pcat of listeplacecat" [ngValue]="pcat.pcatname">
+                                        {{pcat.pcatname}}
+                                    </option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputRestoname">Restoname</label>
-                                <input type="text" class="form-control" id="exampleInputRestoname" placeholder="Enter Restoname">
+                                <input type="text" class="form-control" [(ngModel)]="resto.restoname" id="exampleInputRestoname" placeholder="Enter Restoname">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputLocation">location</label>
-                                <input type="text" class="form-control" id="exampleInputLocation" placeholder="Enter location">
+                                <input type="text" class="form-control" [(ngModel)]="resto.location" id="exampleInputLocation" placeholder="Enter location">
                             </div>
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-info">Submit</button>
+                            <button (click)="updateResto()" class="btn btn-info">Submit</button>
                         </div>
-                    </form>
+                    
                 </div>
                 <!-- /.card -->
                 <!-- general form elements -->

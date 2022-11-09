@@ -19,44 +19,45 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form>
+                        <form #f="ngForm" (ngSubmit)=onSaveRecipe(f.value)>
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="demo_overview">Select dishcategory</label>
-                                        <select id="demo_overview" class="form-control" data-role="select-dropdown">
-                                        <!-- options -->
-                                        <option value="DZ">salee</option>
-                                        <option value="BH">sucree</option>
-                                        <option value="BE">kito</option>
+                                    <label for="demo_overview">Select Dish Category</label>
+                                        <select id="demo_overview" [(ngModel)]="recipe.dishcategory" name="dcatname" class="form-control" data-role="select-dropdown">
+                        
+                                        <option [ngValue]="">Please select placecat</option>
+                                        <option *ngFor="let dcat of listedishcat" [ngValue]="dcat.dcatname">
+                                            {{dcat.dcatname}}
+                                        </option>
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputTitle">Title</label>
-                                    <input type="text" class="form-control" id="exampleInputTitle" placeholder="Enter Title">
+                                    <input type="text" ngModel name="title" class="form-control" id="exampleInputTitle" placeholder="Enter Title">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputDescription">Description</label>
-                                    <textarea type="text" class="form-control" id="exampleInputDescription" placeholder="Description of brand"></textarea>
+                                    <textarea type="text" ngModel name="description" class="form-control" id="exampleInputDescription" placeholder="Description of brand"></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputImage">Image</label>
                                     <div class="input-group">
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="exampleInputImage">
+                                            <input type="file"  (change)="onSelectFile($event)" class="custom-file-input">
                                             <label class="custom-file-label" for="exampleInputImage">Choose file</label>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputpreparationTime">preparationTime</label>
-                                    <input type="text" class="form-control" id="exampleInputpreparationTime" placeholder="Enter preparationTime">
+                                    <input type="text" ngModel name="preparationTime" class="form-control" id="exampleInputpreparationTime" placeholder="Enter preparationTime">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputingredients">ingredients</label>
-                                    <input type="text" class="form-control" id="exampleInputingredients" placeholder="Enter ingredients">
+                                    <input type="text" ngModel name="ingredients" class="form-control" id="exampleInputingredients" placeholder="Enter ingredients">
                                 </div>
                             </div>
-                            <!-- /.card-body -->
+                            
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </div>

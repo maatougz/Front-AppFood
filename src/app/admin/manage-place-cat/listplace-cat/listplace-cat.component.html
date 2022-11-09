@@ -28,16 +28,16 @@
                         <tr>
                             <th style="width: 10px">#</th>
                             <th>Name Place-Cat</th>
-                            <th style="width: 50px">Edit</th>
+                            
                             <th style="width: 50px">Delete</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1.</td>
-                            <td>Nameplacecat</td>
-                            <td><button (click)="updplacecat()" type="button" class="btn btn-block btn-default btn-sm">Edit</button></td>
-                            <td><button  type="button" class="btn btn-block btn-danger btn-sm">Delete</button></td>
+                        <tr *ngFor="let pcat of placescat">
+                            <td>{{pcat.idPCat}}</td>
+                            <td>{{pcat.pcatname}}</td>
+                            
+                            <td><button (click)="delplaceCat(pcat.idPCat)" class="btn btn-block btn-danger btn-sm">Delete</button></td>
                         </tr>
                     </tbody>
                 </table>

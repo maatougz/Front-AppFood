@@ -35,13 +35,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1.</td>
-                            <td>image</td>
-                            <td>Brandname</td>
-                            <td>Description</td>
-                            <td><button (click)="updbrand()" type="button" class="btn btn-block btn-default btn-sm">Edit</button></td>
-                            <td><button  type="button" class="btn btn-block btn-danger btn-sm">Delete</button></td>
+                        <tr *ngFor="let b of brands">
+                            <td>{{b.idbrand}}</td>
+                            <td><img class="card-img-top img-responsive"
+                                 style="background-image: url(http://localhost:9595/visitor/imagebybrand/{{b.idbrand}}) ;background-size:100px; background-position: center; background-repeat: no-repeat; height: 100px;"></td>
+                            <td>{{b.brandname}}</td>
+                            <td>{{b.brandDescription}}</td>
+                            <td><button (click)="onEditBrand(b.idbrand)" class="btn btn-block btn-default btn-sm">Edit</button></td>
+                            <td><button  (click)="delbrand(b.idbrand)" class="btn btn-block btn-danger btn-sm">Delete</button></td>
                         </tr>
                     </tbody>
                 </table>

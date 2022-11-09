@@ -31,87 +31,64 @@
                                 <div class="col-md-6  d-flex">
                                     <div class="contact-wrap w-100 p-md-5 p-4">
                                         <h3 class="mb-4">Sign up</h3>
-                                        <!--<div class="alert alert-danger" role="alert" th:text="${error}" th:if="${error}"></div>-->
-                                        <form method="POST" th:action="@{/Sign-up}" th:object="${user}" id="contactForm" class="contactForm" name="fsignup" onsubmit="valider()" enctype="multipart/form-data">
+                                        
+                                        <form #f="ngForm" (ngSubmit)="onSaveUser(f.value)" method="POST"  id="contactForm" class="contactForm" name="fsignup" onsubmit="valider()" enctype="multipart/form-data">
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <input type="text" class="form-control" name="username" id="username"  placeholder="Username" required>
+                                                        <input type="text" ngModel class="form-control" name="username"  placeholder="Username" required>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <input type="text" class="form-control" name="firstname" id="firstname"  placeholder="firstname" required>
+                                                        <input type="text" ngModel name="nom"  placeholder="Enter first name" class="form-control" required>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <input type="text" class="form-control" name="lastname" id="lastname"  placeholder="lastname" required>
+                                                        <input name="prenom" ngModel type="text" placeholder="Enter last name" class="form-control" required>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12"> 
                                                     <div class="form-group">
-                                                        <input type="email" class="form-control" name="email" id="email"  placeholder="Email" required>
+                                                        <input type="email" ngModel class="form-control" name="email"  placeholder="Enter Email" required>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12"> 
                                                     <div class="form-group">
-                                                        <input type="password" class="form-control" name="password" id="password"  minlength="8" placeholder="Password (8 characters min):"
+                                                        <input type="password" ngModel  class="form-control" name="password" id="password"  minlength="8" placeholder="Password (8 characters min):"
                                                             pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}" required>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12"> 
                                                     <div class="form-group">
-                                                        <input type="password" class="form-control" name="confirm_password" id="confirm_password"  placeholder="confirm password" onkeyup="check_pass()"><br/>
+                                                        <input type="password" ngModel name="repassword" class="form-control"    placeholder="confirm password" onkeyup="check_pass()"><br/>
                                                         <span id="message"></span>
                                                     </div>
                                                 </div>
                                                 
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <input type="text" class="form-control" name="phone" id="phone" th:field="*{phone}" placeholder="Phone" required>
+                                                        <input type="text" name="tel" ngModel  placeholder="Enter your phone number" class="form-control" required>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <input type="date" class="form-control" name="birthDate" id="birthDate"  required min="1940-01-01" max="2006-12-31"> 		
+                                                        <input type="date" ngModel class="form-control" name="dateBirdh"   placeholder="Enter your BirthDay"  required min="1940-01-01" max="2006-12-31"> 		
                                                     </div>
                                                 </div>
-                                                <div class="col-md-12">
-                                                    <div class="form-group">
-                                                        <select id="demo_overview" class="form-control" data-role="select-dropdown">
-                                                            <!-- options -->
-                                                            <option value="">Select country</option>
-                                                            <option value="CA">Canada</option>
-                                                            <option value="CN">China</option>
-                                                            <option value="EG">Egypt</option>
-                                                            <option value="FR">France</option>
-                                                            <option value="DE">Germany</option>
-                                                            <option value="IT">Italy</option>
-                                                            <option value="JP">Japan</option>
-                                                            <option value="LY">Libya</option>
-                                                            <option value="MA">Morocco</option>
-                                                            <option value="NG">Nigeria</option>
-                                                            <option value="QA">Qatar</option>
-                                                            <option value="SA">Saudi Arabia</option>
-                                                            <option value="TN">Tunisia</option>
-                                                            <option value="TR">Turkey</option>
-                                                            <option value="GB">United Kingdom</option>
-                                                            <option value="US">United States</option>
-                                                        </select>
+                                                <div class="form-group">
+                                                    
+                                                    <div class="input-group">
+                                                      <div class="custom-file">
+                                                        <input type="file"  (change)="onSelectFile($event)" class="custom-file-input" >
+                                                        <label class="custom-file-label" for="exampleInputImage">Choose image</label>
+                                                      </div>
                                                     </div>
-                                                </div>
-                                                <div class="col-md-12"> 
-                                                    <div class="custom-file mb-3" >  
-                                                        <div class="form-group">
-                                                            <input type="file" name="file" class="custom-file-input"  id="validatedCustomFile" required>
-                                                        </div>
-                                                        <label class="custom-file-label" for="validatedCustomFile">Add photo for your profile...</label>
-                                                    </div>  
-                                                </div>
+                                                  </div>
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <input type="submit" name="submit" id="submit" value="Sign up" class="btn btn-primary sign-up">
+                                                        <button class="btn btn-primary  sign-up">Create Account</button>
                                                         <div class="submitting"></div>
                                                     </div>
                                                 </div>

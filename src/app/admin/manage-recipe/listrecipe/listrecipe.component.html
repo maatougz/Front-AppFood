@@ -17,9 +17,7 @@
     </section>
         <div class="card">
             <div class="card-header">
-                <div class="col-xs-1 col-md-1 float-right">
-                    <button type="button" (click)="addrecipe()" class="btn btn-block btn-info btn-sm">Add recipe</button>
-                </div>
+                
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -32,26 +30,28 @@
                             <th>description</th>
                             <th>preparationTime</th>
                             <th>ingredients</th>
-                            <th>publisher</th>
                             <th>dateofcreation</th>
+                            <th>publisher</th>
                             <th>dishcategory</th>
-                            <th style="width: 50px">Edit</th>
+                            
                             <th style="width: 50px">Delete</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1.</td>
-                            <td>imgRecipe</td>
-                            <td>title</td>
-                            <td>description</td>
-                            <td>preparationTime</td>
-                            <td>ingredients</td>
-                            <td>publisher</td>
-                            <td>dateofcreation</td>
-                            <td>dishcategory</td>
-                            <td><button (click)="updrecipe()" type="button" class="btn btn-block btn-default btn-sm">Edit</button></td>
-                            <td><button  type="button" class="btn btn-block btn-danger btn-sm">Delete</button></td>
+                        <tr *ngFor="let recipe of recipes">
+                            <td>{{recipe.idRecipe}}</td>
+                            <td><img class="card-img-top img-responsive"
+                                style="background-image: url(http://localhost:9595/visitor/imagebyrecipe/{{recipe.idRecipe}}) ;background-size:100px; background-position: center; background-repeat: no-repeat; height: 100px;">
+                            </td>
+                            <td>{{recipe.title}}</td>
+                            <td>{{recipe.description}}</td>
+                            <td>{{recipe.preparationTime}}</td>
+                            <td>{{recipe.ingredients}}</td>
+                            <td>{{recipe.dateofcreation}}</td>
+                            <td>{{recipe.userpub}}</td>
+                            <td>{{recipe.dcatname}}</td>
+                            
+                            <td><button  (click)="delrecipe(recipe.idRecipe)" class="btn btn-block btn-danger btn-sm">Delete</button></td>
                         </tr>
                     </tbody>
                 </table>

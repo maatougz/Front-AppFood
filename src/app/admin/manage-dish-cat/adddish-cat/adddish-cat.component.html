@@ -23,11 +23,11 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form>
+            <form  #f="ngForm" (ngSubmit)=onSaveDishCat(f.value)>
                 <div class="card-body">
                     <div class="form-group">
                     <label for="exampleInputDishcatname">Dishcatname</label>
-                    <input type="text" class="form-control" id="exampleInputDishcatname" placeholder="Enter Dish category name">
+                    <input type="text" class="form-control" ngModel name="dcatname" id="exampleInputDishcatname" placeholder="Enter Dish category name">
                     </div>
                 </div>
                 <!-- /.card-body -->

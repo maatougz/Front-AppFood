@@ -20,7 +20,6 @@
 		
 	</head>
 	<body>
-		<app-unavbar></app-unavbar>
 
         <section class="ftco-section bg-light" >
             <div class="container">
@@ -31,26 +30,18 @@
                                 <div class="col-md-6  d-flex">
                                     <div class="contact-wrap w-100 p-md-5 p-4">
                                         <h3 class="mb-4">Login</h3>
-                                        <form th:action="@{/Login}" method="POST" id="contactForm" class="contactForm">
+                                        <form #f="ngForm"  (ngSubmit)="onLogin(f.value)" method="POST" id="contactForm" class="contactForm">
                                             <div class="row">
                                                 
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                    <!--    
-                                                        <div class="alert alert-primary" role="alert" th:text="${success}" th:if="${success}"></div>
-                                                        <div th:if="${param.error}" class="alert alert-error">    
-                                                            Invalid email or password.
-                                                        </div>
-                                                        <div th:if="${param.logout}" class="alert alert-success"> 
-                                                            You have been logged out.
-                                                        </div>
-                                                    -->
-                                                        <input type="email" class="form-control" name="email" id="email" placeholder="email">
+                                                  
+                                                        <input type="text" name="username" ngModel type="text" placeholder="Enter  username" class="form-control" required>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12"> 
                                                     <div class="form-group">
-                                                        <input type="password" class="form-control" name="password" id="" placeholder="Password">
+                                                        <input type="text" name="password" ngModel type="password" placeholder="Enter password" class="form-control" required>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12">
@@ -62,7 +53,7 @@
                                                         <a href="/forgotpass">Forgot your password ?</a>
                                                     </div>
                                                     <div>
-                                                        <a href="/Signup">Create An Account !</a>
+                                                        <a routerLink="/signup">Create An Account !</a>
                                                     </div>
                                                 </div>
                                             </div>

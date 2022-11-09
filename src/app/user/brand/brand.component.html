@@ -6,8 +6,32 @@
             </div>
         </div>
         <div class="row">
+            <div class="col-md-3">
+                <div class="tabulation mt-4 ">
+                    <form class="search" action="/searchResto">
+                            <input type="search" class="form-control" placeholder="Entrez votre recherche" name="search" required>     <!-- barre de recherche -->
+                            <input type="submit" class="btn btn-primary sign-up" value="Recherche brand"  >     <!-- bouton de validation -->
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="tabulation mt-4 ">
+                  
+                    <ul class="nav nav-pills nav-fill d-md-flex d-block flex-column">
+                   
+                       <li class="nav-item text-left">
+                        <a class="nav-link py-4"><strong> <i class="fa fa-align-justify mr-3" aria-hidden="true"></i>Place Category</strong></a>
+                      </li>
+                      <li class="nav-item text-left">
+                        <a class="nav-link active py-4" th:href="@{/restos/cat/{category}(category=${category.placecategory})}" th:each="category : ${categories}" th:value="${category.placecategory}"  th:text="${category.placecategory}"><span class="fa fa-mobile mr-3" aria-hidden="true"></span> </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
             <div class="col-8 mt-4">
-                <div class="tab-content col-md-10 text-center">
+                <div class="tab-content ">
                     <div class="tab-pane container p-0 active" id="services-1">
                         <div class="row" >
                             <div class="row d-flex">
@@ -16,25 +40,25 @@
                                         <h1>No brand</h1>
                                     </div>
                                 </div>-->
-                                <div class="col-md-4 d-flex " th:if="${not #lists.isEmpty(brands)}" th:each="brand : ${brands}">
+                                <div class="col-md-4 d-flex " *ngFor="let brand of brands">
                                     <div class="blog-entry align-self-stretch">
-                                        <a href=""> 
-                                            <img alt="" src="assets/images/image_1.jpg" style="width: 250px; height: 230px; ">
+                                        <a routerLink="/user/restos/{{brand.idbrand}}"> 
+                                            <img alt="" style="background-image: url(http://localhost:9595/visitor/imagebybrand/{{brand.idbrand}})" style="width: 200px; height: 200px; ">
                                         </a>
                                         <div class="text p-2">
                                             <div class="posted mb-3 d-flex">
                                                 <div class="desc pl-3">
-                                                    <span th:value="${brand.brandDescription}" th:text="${brand.brandDescription}">descriptions: qfs dfqsd  dsgqsd dsgqs </span>
+                                                    <span >descriptions: {{brand.brandDescription}} </span>
                                                 </div>
                                             </div>
                                             <h3 class="heading">
-                                                <a th:href="@{/restos/{id}(id=${brand.idbrand})}" th:value="${brand.brandname}" th:text="${brand.brandname}">brandname
+                                                <a >{{brand.brandname}}
                                                 </a>
                                                 <div style="float:right">
                                                     <!-- 
                                                     <small   th:text="${product.avisss.size}" ></small> 
                                                     -->
-                                                    <small th:th:text="${#lists.size(brand.restos)}">5</small><small> Resto(s)</small>
+                                                    <small >{{this.brand.restos.length}}</small><small> Resto(s)</small>
                                                 </div>
                                             </h3>
                                             <!-- 

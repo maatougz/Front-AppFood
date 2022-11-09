@@ -28,16 +28,16 @@
                         <tr>
                             <th style="width: 10px">#</th>
                             <th>Name Dish-Cat</th>
-                            <th style="width: 50px">Edit</th>
+                            
                             <th style="width: 50px">Delete</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1.</td>
-                            <td>Namedishcat</td>
-                            <td><button (click)="upddishcat()" type="button" class="btn btn-block btn-default btn-sm">Edit</button></td>
-                            <td><button  type="button" class="btn btn-block btn-danger btn-sm">Delete</button></td>
+                        <tr *ngFor="let dcat of dishescat">
+                            <td>{{dcat.idDCat}}</td>
+                            <td>{{dcat.dcatname}}</td>
+                            
+                            <td><button  (click)="deldishCat(dcat.idDCat)" class="btn btn-block btn-danger btn-sm">Delete</button></td>
                         </tr>
                     </tbody>
                 </table>

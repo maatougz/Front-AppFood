@@ -1,19 +1,27 @@
 <section class="menu-wrap flex-md-column-reverse d-md-flex">
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="fa fa-bars"></span> Menu
-            </button>
-            <div class="req-button order-lg-last">
-                <a routerLink="/login"><span class="fa fa-user" aria-hidden="false"></span> Login</a>
+            <div class="req-button order-lg-last" *ngIf="isAuthenticated()">
+                <a><span class="fa fa-user" aria-hidden="true"></span> {{ currentUser.username }}</a>
             </div>
-            <div class="req-button order-lg-last">
-                <a routerLink="/signup"><span class="fa fa-user" aria-hidden="true"></span> Sign up</a>
+            <div class="req-button order-lg-last" *ngIf="isAuthenticated()" >
+                <a  (click)=onLogout()><span class="fa fa-user" aria-hidden="true"></span> Logout</a>
             </div>
+           
+            <div class="req-button order-lg-last" *ngIf="!
+            
+            isAuthenticated()">
+                <a  routerLink="/login"><span class="fa fa-user" aria-hidden="true"></span> Login</a>
+            </div>
+           
+            <div class="req-button order-lg-last"  *ngIf="!isAuthenticated()">
+                <a routerLink="/signup"><span class="fa fa-user" aria-hidden="true"></span> Register</a>
+            </div>
+         
             <div class="collapse navbar-collapse" id="ftco-nav">
-                <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav mr-auto" >
                     <li class="nav-item"><a routerLink="/user" class="nav-link"><i class="nav-icon fas fa-home"></i> Home</a></li>
-                    <li class="nav-item"><a routerLink="/user/brands" class="nav-link">Brands</a></li>
+                    <li  class="nav-item"><a routerLink="/user/brands" class="nav-link">Brands</a></li>
                     <li class="nav-item"><a routerLink="/user/recipes" class="nav-link">Recipes</a></li>
                     <li class="nav-item"><a routerLink="/user/about" class="nav-link">About us</a></li>
                     <li class="nav-item"><a routerLink="/user/contact" class="nav-link">Contact</a>

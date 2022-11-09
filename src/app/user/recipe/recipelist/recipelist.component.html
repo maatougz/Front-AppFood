@@ -47,46 +47,25 @@
                     <div class="tab-pane container p-0 active" id="services-1">
                         <div class="row" >
                             <div class="row d-flex">
-                                <div class="col-md-4 d-flex " th:each="recipe : ${recipes}">
-                                    <div class="blog-entry align-self-stretch">
-                                        <a th:href="@{/user/recipe/{id}(id=${recipe.idrecipe})}"> 
-                                            <img th:if="${recipe.imgRecipe} != null" alt="" src="/assets/static/images/3.jpg" style="width: 280px; height: 250px; ">
-                                            <!--<img th:if="${recipe.imgRecipe} == null" src="../../../../static/images/recipe.jpg" alt="" style="width: 280px; height: 250px; ">-->
+                                <div class="col-md-4 d-flex" *ngFor="let recipe of recipes">
+                                    <div class="blog-entry align-self-stretch" >
+                                        <a routerLink="/user/recipe/{{recipe.idRecipe}}"> 
+                                            <img  alt="" style="background-image: url(http://localhost:9595/visitor/imagebyrecipe/{{recipe.idRecipe}}) ; background-size: cover; width: 280px; height: 250px; background-repeat: no-repeat;background-position: center;">
                                         </a>
-                                        <div class="text p-3">
+                                        <div class="text p-2">
                                             <div class="posted mb-3 d-flex">
-                                                <div class="img author">
-                                                    <img  src="/assets/static/images/women.jpg" style="width: 50px; height: 50px;border-radius: 50%; " >
-                                                </div>
+                                            <div class="img author">
+                                                <img style="background-image: url(http://localhost:9595/visitor/imagebyusername/{{recipe.userpub}}); background-size: cover; background-repeat: no-repeat;background-position: center;"  style="width: 50px; height: 50px;border-radius: 50%; " >
+                                            </div>
                                                 <div class="desc pl-3">
-                                                    Posted By <i th:value="${recipe.publisher.username}" th:text="${recipe.publisher.username}">user2</i>
-                                                    <span th:value="${recipe.dateofcreation}" th:text="${recipe.dateofcreation}">description</span>
+                                                    Posted By <i>{{recipe.userpub}}</i><br>
+                                                    <span >{{recipe.dateofcreation | date :'short'}}</span>
                                                 </div>
                                             </div>
-                                            <h3 class="heading">
-                                                <a th:href="@{/recipe/{id}(id=${recipe.idrecipe})}" th:value="${recipe.title}" th:text="${recipe.title}">recipe 11
-                                                </a>
-                                                <div style="float:right">
-                                                    <!-- 
-                                                    <small   th:text="${product.avisss.size}" ></small> 
-                                                    -->
-                                                    <small th:text="${#lists.size(recipe.reviews)}"></small><small> review(s)</small>
-                                                </div>
-                                            </h3>
-                                            <!-- 
-                                                <center>  <div class="desc " style="color : #d9ba2b;">
-                                                <small class="fa fa-star"></small>
-                                                <small class="fa fa-star"></small>
-                                                <small class="fa fa-star"></small>
-                                                <small class="fa fa-star"></small>
-                                                <small class="fa fa-star"></small>
-                                                <a th:value="${product.rate}" th:text="${product.rate}"></a>
-                                                </div>
-                                                </center>
-                                            --> 
+                                          <h3 class="heading"><a routerLink="/user/recipe/{{recipe.idRecipe}}" >{{recipe.title}}</a></h3>
                                         </div>
                                     </div>
-                                </div>
+                                    </div>
                             </div>
                         </div>
                     </div>

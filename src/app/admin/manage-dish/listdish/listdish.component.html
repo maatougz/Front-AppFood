@@ -38,16 +38,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1.</td>
-                            <td>Image</td>
-                            <td>Name of Dish</td>
-                            <td>Description</td>
-                            <td>price</td>
-                            <td>Dish Category</td>
-                            <td>restoname</td>
-                            <td><button (click)="upddish()" type="button" class="btn btn-block btn-default btn-sm">Edit</button></td>
-                            <td><button  type="button" class="btn btn-block btn-danger btn-sm">Delete</button></td>
+                        <tr *ngFor="let dish of dishes">
+                            <td>{{dish.idDish}}</td>
+                            <td>
+                                <img class="card-img-top img-responsive"
+                                 style="background-image: url(http://localhost:9595/visitor/imagebydish/{{dish.idDish}}) ;background-size:100px; background-position: center; background-repeat: no-repeat; height: 100px;">
+                            </td>
+                            <td>{{dish.dishname}}</td>
+                            <td>{{dish.dishDescription}}</td>
+                            <td>{{dish.price}}</td>
+                            <td>{{dish.dcatname}}</td>
+                            <td>{{dish.restoname}}</td>
+                            <td><button (click)="onEditDish(dish.idDish)"  class="btn btn-block btn-default btn-sm">Edit</button></td>
+                            <td><button  (click)="deldish(dish.idDish)" class="btn btn-block btn-danger btn-sm">Delete</button></td>
                         </tr>
                     </tbody>
                 </table>

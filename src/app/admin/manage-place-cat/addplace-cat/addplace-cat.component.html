@@ -23,11 +23,11 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form>
+            <form #f="ngForm" (ngSubmit)=onSavePlacesCat(f.value)>
                 <div class="card-body">
                     <div class="form-group">
-                    <label for="exampleInputPlacecatname">Placecatname</label>
-                    <input type="text" class="form-control" id="exampleInputPlacecatname" placeholder="Enter Place category name">
+                    <label for="exampleInputpcatname">Placecatname</label>
+                    <input type="text" class="form-control" ngModel name="pcatname" id="exampleInputpcatname" placeholder="Enter Place category name">
                     </div>
                 </div>
                 <!-- /.card-body -->

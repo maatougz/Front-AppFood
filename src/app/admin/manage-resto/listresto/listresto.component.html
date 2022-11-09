@@ -36,14 +36,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1.</td>
-                            <td>brandname</td>
-                            <td>placecategory</td>
-                            <td>restoname</td>
-                            <td>location</td>
-                            <td><button (click)="updresto()" type="button" class="btn btn-block btn-default btn-sm">Edit</button></td>
-                            <td><button  type="button" class="btn btn-block btn-danger btn-sm">Delete</button></td>
+                        <tr *ngFor="let r of restos">
+                            <td>{{r.idresto}}</td>
+                            <td>{{r.brandname}}</td>
+                            <td>{{r.pcatname}}</td>
+                            <td>{{r.restoname}}</td>
+                            <td>{{r.location}}</td>
+                            <td><button (click)="onEditResto(r.idresto)" class="btn btn-block btn-default btn-sm">Edit</button></td>
+                            <td><button  (click)="delresto(r.idresto)" class="btn btn-block btn-danger btn-sm">Delete</button></td>
                         </tr>
                     </tbody>
                 </table>

@@ -17,9 +17,7 @@
     </section>
         <div class="card">
             <div class="card-header">
-                <div class="col-xs-1 col-md-1 float-right">
-                    <button type="button" (click)="adduser()" class="btn btn-block btn-info btn-sm">Add user</button>
-                </div>
+                
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -29,32 +27,38 @@
                             <th style="width: 10px">#</th>
                             <th>Image</th>
                             <th>Username</th>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
                             <th>Email</th>
-                            <th>Country</th>
                             <th>Phone</th>
                             <th>Date Of Birth</th>
                             <th>Role</th>
                             
-                            <th style="width: 50px">Edit</th>
+                            
                             <th style="width: 50px">Delete</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1.</td>
-                            <td>image</td>
-                            <td>username</td>
-                            <td>Email</td>
-                            <td>Country</td>
-                            <td>Phone</td>
-                            <td>DOB</td>
-                            <td>role</td>
-                            <td><button (click)="upduser()" type="button" class="btn btn-block btn-default btn-sm">Edit</button></td>
-                            <td><button  type="button" class="btn btn-block btn-danger btn-sm">Delete</button></td>
+                        <tr *ngFor="let u of users">
+                            <td>{{u.id}}</td>
+                            <td class="user-img" style="background-image: url(http://localhost:9595/visitor/imagebyuser/{{u.id}}) ;background-size:70px; background-position:center; background-repeat: no-repeat; height: 80px;">
+                                
+                            </td>
+                            <td>{{u.username}}</td>
+                            <td>{{u.nom}}</td>
+                            <td>{{u.prenom}}</td>
+                            <td>{{u.email}}</td>
+                            <td>{{u.tel}}</td>
+                            <td>{{u.dateBirdh}}</td>
+                            <td>{{u.roleName}}</td>
+                            
+                            <td><button  (click)="deluser(u.id)" class="btn btn-block btn-danger btn-sm">Delete</button></td>
                         </tr>
+                       
                     </tbody>
                 </table>
             </div>
+            
             <!-- /.card-body -->
             <div class="card-footer clearfix">
                 <ul class="pagination pagination-sm m-0 float-right">

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RecipeserviceService } from 'src/app/services/recipeservice.service';
 
 @Component({
   selector: 'app-recipelist',
@@ -8,12 +9,22 @@ import { Router } from '@angular/router';
 })
 export class RecipelistComponent implements OnInit {
 
-  constructor(private router : Router) { }
+  recipes:any;
+  constructor(private router : Router, public recipeservice: RecipeserviceService) { }
 
   ngOnInit(): void {
+    this.recipeservice.loadToken();
+    this.recipeservice.getRecipesUser()
+			.subscribe(data => {
+        console.log(data)
+				this.recipes = data;
+        
+			}, error => {
+				console.log(error)
+			});
   }
 
   addrecipe(){
-    this.router.navigate(["user/recipe/add"]);
+    this.router.navigateByUrl("/user/recipe/addrecipe");
   }
 }

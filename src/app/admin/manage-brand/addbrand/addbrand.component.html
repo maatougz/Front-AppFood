@@ -26,26 +26,28 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form>
+            <form #f="ngForm" (ngSubmit)="onSaveBrand(f.value)">
+              
               <div class="card-body">
                 <div class="form-group">
                   <label for="exampleInputBrandname">Brand name</label>
-                  <input type="text" class="form-control" id="exampleInputBrandname" placeholder="Enter Brandname">
+                  <input type="text" class="form-control" ngModel name="brandname" id="brandname" placeholder="Enter Brandname">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputDescription">Description</label>
-                  <textarea type="text" class="form-control" id="exampleInputDescription" placeholder="Description of brand"></textarea>
+                  <textarea type="text" class="form-control" ngModel name="brandDescription" id="brandDescription" placeholder="Description of brand"></textarea>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputImage">Image</label>
                   <div class="input-group">
                     <div class="custom-file">
-                      <input type="file" class="custom-file-input" id="exampleInputImage">
+                      <input type="file"  (change)="onSelectFile($event)" class="custom-file-input">
                       <label class="custom-file-label" for="exampleInputImage">Choose file</label>
+                      
                     </div>
                   </div>
                 </div>
-                
+              
               </div>
               <!-- /.card-body -->
               <div class="card-footer">

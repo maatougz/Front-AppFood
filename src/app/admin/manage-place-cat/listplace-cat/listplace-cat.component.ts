@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { PlaceCatserviceService } from 'src/app/services/place-catservice.service';
 
 @Component({
   selector: 'app-listplace-cat',
@@ -7,17 +8,30 @@ import { Router } from '@angular/router';
   styleUrls: ['./listplace-cat.component.css']
 })
 export class ListplaceCatComponent implements OnInit {
-
-  constructor(private router : Router) { }
+  placescat:any;
+  constructor(private router : Router,  private placecatservice : PlaceCatserviceService) { }
 
   ngOnInit(): void {
+    this.placecatservice.loadToken();
+    this.placecatservice.getPlacesCat()
+			.subscribe(data => {
+				this.placescat = data;
+			}, error => {
+				console.log(error)
+			});
   }
 
   addplacecat() {
     this.router.navigate(['admin/placecat/add']);
   }
 
-  updplacecat() {
-    this.router.navigate(['admin/placecat/upd']);
+  delplaceCat(id:any) {
+    this.placecatservice.deletePlaceCat(id).subscribe(
+      data => {
+        console.log('deleted response', data);
+        this.placecatservice.getPlacesCat(); 
+      }
+    )
+    window.location.reload();
   }
 }

@@ -1,0 +1,99 @@
+<section class="ftco-section bg-light">
+    <div class="container-fluid">
+        <div class=" row justify-content-center mb-5">
+            <div class="col-md-8 text-center heading-section">
+                <h2 class="mb-4">Restaurants</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="tabulation mt-4 ">
+                    <form #f="ngForm" class="search" (ngSubmit)="onSearchResto(f.value)">
+                            <input type="search" class="form-control" ngModel name="search" placeholder="Entrez votre recherche"  required>     <!-- barre de recherche -->
+                            <button type="submit" class="btn btn-primarysign-up">Recherche resto</button>    <!-- bouton de validation -->
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="tabulation mt-4 ">
+                  
+                    <ul class="nav nav-pills nav-fill d-md-flex d-block flex-column">
+                   
+                       <li class="nav-item text-left">
+                        <a class="nav-link py-4"><strong> <i class="fa fa-align-justify mr-3" aria-hidden="true"></i>Place Category</strong></a>
+                      </li>
+                      <li class="nav-item text-left">
+                        <a class="nav-link active py-4" th:href="@{/restos/cat/{category}(category=${category.placecategory})}" th:each="category : ${categories}" th:value="${category.placecategory}"  th:text="${category.placecategory}"><span class="fa fa-mobile mr-3" aria-hidden="true"></span> </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+            <div class="col-8 mt-4">
+                <div class="tab-content col-md-10 text-center">
+                    <div class="tab-pane container p-0 active" id="services-1">
+                        <div class="row" >
+                            <div class="row d-flex">
+                                <!--<div class="col-md-4 d-flex " th:if="${#lists.isEmpty(brands)}">
+                                    <div class="blog-entry align-self-stretch">
+                                        <h1>No brand</h1>
+                                    </div>
+                                </div>-->
+                                <div class="col-md-4 d-flex " *ngFor="let resto of restos">
+                                    <div class="blog-entry align-self-stretch">
+                                        <a href=""> 
+                                            <img alt="" style="background-image: url(http://localhost:9595/visitor/imagebybrand/{{this.id}})" style="width: 200px; height: 200px; ">
+                                        </a>
+                                        <div class="text p-2">
+                                            <div class="posted mb-3 d-flex">
+                                                <div class="desc pl-3">
+                                                    <span >Location: {{resto.location}} </span>
+                                                </div>
+                                            </div>
+                                            <h3 class="heading">
+                                                <a >{{resto.restoname}}
+                                                </a>
+                                                <div style="float:right">
+                                                    <!-- 
+                                                    <small   th:text="${product.avisss.size}" ></small> 
+                                                    -->
+                                                    <small >{{this.resto.length}}</small><small> Dish(s)</small>
+                                                </div>
+                                            </h3>
+                                            <!-- 
+                                            <center>  <div class="desc " style="color : #d9ba2b;">
+                                            <small class="fa fa-star"></small>
+                                            <small class="fa fa-star"></small>
+                                            <small class="fa fa-star"></small>
+                                            <small class="fa fa-star"></small>
+                                            <small class="fa fa-star"></small>
+                                            <a th:value="${product.rate}" th:text="${product.rate}"></a>
+                                            </div>
+                                            </center> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col text-center">
+            <div class="block-27">
+                <ul>
+                <li><a href="#">&lt;</a></li>
+                <li class="active"><span>1</span></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">&gt;</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

@@ -55,6 +55,11 @@ import { LoginComponent } from './login/login.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { AccountComponent } from './user/account/account.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { RestoComponent } from './user/resto/resto.component';
+import { RestosbysearchComponent } from './user/resto/restosbysearch/restosbysearch.component';
+
 
 
 
@@ -113,12 +118,18 @@ import { AccountComponent } from './user/account/account.component';
     ForgotPasswordComponent,
     SignUpComponent,
     AccountComponent,
+    RestoComponent,
+    RestosbysearchComponent,
+  
 
 
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule
  
     
   ],

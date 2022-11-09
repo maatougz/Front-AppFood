@@ -5,32 +5,31 @@
                 <ul class="comment-list">
                     <li class="">
                         <div class="vcard bio">
-                            <img  src="assets/images/person_1.jpg"  class="ml-4 mt-3" alt="Image placeholder" >
+                            <img style="background-image: url(http://localhost:9595/visitor/imagebyusername/{{recipe.userpub}}); background-size: cover; background-repeat: no-repeat;background-position: center;"  style="width: 50px; height: 50px;border-radius: 50%; " >
                         </div>
                         <div class="comment-body mt-2">
-                            <h5 th:text=${recipe.publisher.username} > Posted by : username</h5>
+                            <h5  > Posted by : {{recipe.userpub}}</h5>
                             <div class="meta">
-                                <span class="fa fa-chevron-circle-down" th:text=${recipe.dateofcreation}>15/06/2021</span>
+                                <span class="fa fa-chevron-circle-down" >{{recipe.dateofcreation | date :'short'}}</span>
                                 <hr> 	
                             </div>
                         </div>
                     </li>
-                    <li> 
-                        <h3 th:text=${recipe.title} style="margin-left:5% ;"></h3>
-                    </li>
+                    
                 </ul>
                 <div class="box1">
-                    <h3 >Title</h3>
-                    <img th:if="${recipe.imgRecipe} != null" src="assets\images\work-2.jpg" alt="" class="img-fluid mb-8" style=" width: 450px ; height: 420px ;margin-left:30%  ">
-                    <!--<img th:if="${recipe.imgRecipe} == null" src="../../static/images/recipe.jpg" alt="" class="img-fluid mb-8" style=" width: 450px ; height: 420px ;margin-left:30%  ">-->
-                    
+                    <h3 >{{recipe.title}}</h3>
+                    <img style="background-image: url(http://localhost:9595/visitor/imagebyrecipe/{{recipe.idRecipe}}); background-size: cover; background-repeat: no-repeat;background-position: center;" alt="" class="img-fluid mb-8" style=" width: 450px ; height: 420px ;margin-left:30%  ">
+                    <br>
+                    <br><br>
                     <h6>dishcategory</h6>
+                    <p>{{recipe.dcatname}}</p>
                     <h6>Preperation Time </h6>
-                    <p  th:text=${recipe.preparationTime} 	></p>
+                    <p>{{recipe.preparationTime}}</p>
                     <h6 >Ingredients </h6>
-                    <p  th:text=${recipe.ingredients} 	></p>
+                    <p >{{recipe.ingredients}}</p>
                     <h6 >Description </h6>
-                    <p  th:text=${recipe.description} 	></p>
+                    <p >{{recipe.description}}</p>
                 </div>
                 <br>
                 <div class="row box1">
@@ -40,22 +39,22 @@
                     <h3> Reviews </h3>
                     <br>
                     <ul class="comment-list" >
-                        <div  th:each="review : ${recipe.reviews}">
+                        <div  *ngFor="let review of recipe.reviews">
                             <li class="comment box1">
                                 <br>
                                 <div class="vcard bio" >
-                                    <img  src="assets\images\person_2.jpg"  class="ml-2" alt="Image placeholder">
+                                    <img style="background-image: url(http://localhost:9595/visitor/imagebyusername/{{review.userpub}}); background-size: cover; background-repeat: no-repeat;background-position: center;"  style="width: 50px; height: 50px;border-radius: 50%; " >
                                 </div>
                                 <div class="comment-body">
-                                    <h3   style=" font-size :16px ; margin-top : 5px !important;" th:text=${review.user.username}></h3>
+                                    <h3   style=" font-size :16px ; margin-top : 5px !important;" th:text=${review.userpub}>{{review.userpub}}</h3>
                                     <div class="meta">
-                                        <span class="fa fa-chevron-circle-down" th:text="${review.dateofcreation}">12/03/2022</span>
+                                        <span class="fa fa-chevron-circle-down" >{{review.dateofcreation}}</span>
                                     </div>
                                     <hr> 
-                                    <div th:if="${review.imgReview != null}" >
-                                        <img src="assets\images\image_5.jpg" alt="" class="img-fluid mb-8" style=" width: 200px ; height: 200px ">
+                                    <div  >
+                                        <img  alt="" style="background-image: url(http://localhost:9595/visitor/imagebyreview/{{review.idReview}}) ; background-size: cover; width: 280px; height: 250px; background-repeat: no-repeat;background-position: center;">
                                     </div>
-                                    <div style="color : #000000; font-size : 18px ; " th:text="${review.comment}">coment hxdjhqsd qsdqsd dshd ..
+                                    <div style="color : #000000; font-size : 18px ; " th:text="${review.comment}">{{review.comment}}
                                     </div>
                                     <hr>  
                                     <p>
@@ -71,25 +70,30 @@
                     </ul>
                     <div class="comment-form-wrap pt-5">
                         <h3 class="mb-5">Leave a review</h3>
-                        <form action="#" class="p-5 bg-light">
+                        <form #f="ngForm" (ngSubmit)=onSaveReview(f.value) class="p-5 bg-light">
                             <div class="form-group">
                                 <label for="TitleReview">Add photo about your experience (optional) </label>
-                                <input type="file" class="form-control" id="titleReview">
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input type="file"  (change)="onSelectFile($event)" class="custom-file-input">
+                                        <label class="custom-file-label" for="exampleInputImage">Choose file</label>
+                                    </div>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="review">Your review *</label>
-                                <textarea  class="form-control" cols="30" rows="10" th:field="${review.comment}" id="comment" name="comment" required></textarea>
+                                <textarea  class="form-control" cols="30" rows="10" ngModel name="comment" name="comment" required></textarea>
                             </div>
                             <div class="form-group">
-                                <a th:href="@{/user/recipe/{id}(id=${recipe.idrecipe})}"  type="submit"  class="btn py-3 px-4 btn-primary">
-                                    Submit your review
-                                </a>
+                                <div class="card-footer">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
                             </div>
                         </form>
                     </div>
                 </div>
             </div> 
-            <!-- .col-md-8 -->
+            
         </div>
     </div>
-</section> <!-- .section -->
+</section>
