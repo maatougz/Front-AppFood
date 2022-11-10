@@ -9,8 +9,8 @@
             <div class="col-md-3">
                 <div class="tabulation mt-4 ">
                     <form #f="ngForm" class="search" (ngSubmit)="onSearchResto(f.value)">
-                            <input type="search" class="form-control" ngModel name="search" placeholder="Entrez votre recherche"  required>     <!-- barre de recherche -->
-                            <button type="submit" class="btn btn-primarysign-up">Recherche resto</button>    <!-- bouton de validation -->
+                            <input type="search" class="form-control" ngModel name="searchTerm" placeholder="Search for a restaurant"  >     <!-- barre de recherche -->
+                            <input type="submit" value="Search" class="btn btn-primary sign-up" />
                     </form>
                 </div>
             </div>

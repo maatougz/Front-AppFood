@@ -36,10 +36,14 @@ import { AccountComponent } from './user/account/account.component';
 import { BrandComponent } from './user/brand/brand.component';
 import { ContactComponent } from './user/contact/contact.component';
 import { IndexComponent } from './user/index/index.component';
+import { AdsearchrecipeComponent } from './user/recipe/adsearchrecipe/adsearchrecipe.component';
 import { OnerecipeComponent } from './user/recipe/onerecipe/onerecipe.component';
 import { RecipeaddComponent } from './user/recipe/recipeadd/recipeadd.component';
+import { RecipebyadvacedsearchComponent } from './user/recipe/recipebyadvacedsearch/recipebyadvacedsearch.component';
+import { RecipebysearchComponent } from './user/recipe/recipebysearch/recipebysearch.component';
 import { RecipelistComponent } from './user/recipe/recipelist/recipelist.component';
 import { RestoComponent } from './user/resto/resto.component';
+import { RestosbysearchComponent } from './user/resto/restosbysearch/restosbysearch.component';
 import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
@@ -81,10 +85,13 @@ const routes: Routes = [
       {path: 'about', component: AboutUsComponent,},
       {path: 'brands', component: BrandComponent,},
       {path: 'recipes', component: RecipelistComponent,},
-      
+      {path: 'ADSearchRecipe', component: AdsearchrecipeComponent, },
+      {path: 'resultrecipead', component: RecipebyadvacedsearchComponent,},
+      {path: 'resultrecipe', component: RecipebysearchComponent,},
       {path: 'recipe/addrecipe', component: RecipeaddComponent,},
       {path: 'recipe/:id', component: OnerecipeComponent,},
       {path: 'account', component: AccountComponent,},
+      {path: 'resultresto', component: RestosbysearchComponent,},
       {path: 'restos/:id', component: RestoComponent,},
     ],
   },

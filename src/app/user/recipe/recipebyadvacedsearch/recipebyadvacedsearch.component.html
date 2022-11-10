@@ -7,20 +7,7 @@
         </div>
         
         <div class="row">
-            <div class="col-md-10">
-                <form #f="ngForm" class="search" (ngSubmit)="onSearchRecipe(f.value)">
-                    <div class="row">
-                        <div class="col-md-5">
-                            <input type="search" class="form-control" ngModel name="searchTerm" placeholder="Search for a recipe">     <!-- barre de recherche -->
-                        </div>
-                        <div class="col-md-2">
-                            <input type="submit" value="Search" class="btn btn-primary sign-up" />
-                        </div>
-                    </div>
-                </form>
-                
-                <a routerLink="/user/ADSearchRecipe"> Advanced Search</a>
-            </div>
+            
             <div class="col-md-2 float-right">
                 <button (click)="addrecipe()" type="button" class="btn btn-primary " >Add recipe</button>
             </div>
@@ -48,7 +35,7 @@
                     <div class="tab-pane container p-0 active" id="services-1">
                         <div class="row" >
                             <div class="row d-flex">
-                                <div class="col-md-4 d-flex" *ngFor="let recipe of recipes">
+                                <div class="col-md-4 d-flex" *ngFor="let recipe of results">
                                     <div class="blog-entry align-self-stretch" >
                                         <a routerLink="/user/recipe/{{recipe.idRecipe}}"> 
                                             <img  alt="" style="background-image: url(http://localhost:9595/visitor/imagebyrecipe/{{recipe.idRecipe}}) ; background-size: cover; width: 280px; height: 250px; background-repeat: no-repeat;background-position: center;">
@@ -90,4 +77,5 @@
         </div>
     </div>
 </section>
+
 

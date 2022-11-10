@@ -32,8 +32,8 @@
                     <div class="tab-pane container p-0 active" id="services-1">
                         <div class="row" >
                             <div class="row d-flex">
-                                <!--
-                                <div class="col-md-4 d-flex " *ngFor="let resto of restos">
+                                
+                                <div class="col-md-4 d-flex " *ngFor="let resto of results">
                                     <div class="blog-entry align-self-stretch">
                                         <a href=""> 
                                             <img alt="" style="background-image: url(http://localhost:9595/visitor/imagebybrand/{{this.id}})" style="width: 200px; height: 200px; ">
@@ -48,11 +48,13 @@
                                                 <a >{{resto.restoname}}
                                                 </a>
                                                 <div style="float:right">
-                                                    
+                                                    <!-- 
+                                                    <small   th:text="${product.avisss.size}" ></small> 
+                                                    -->
                                                     <small >{{this.resto.length}}</small><small> Dish(s)</small>
                                                 </div>
                                             </h3>
-                                            
+                                            <!-- 
                                             <center>  <div class="desc " style="color : #d9ba2b;">
                                             <small class="fa fa-star"></small>
                                             <small class="fa fa-star"></small>
@@ -61,11 +63,11 @@
                                             <small class="fa fa-star"></small>
                                             <a th:value="${product.rate}" th:text="${product.rate}"></a>
                                             </div>
-                                            </center> 
+                                            </center> -->
                                         </div>
                                     </div>
                                 </div>
-                            -->
+                            
                             </div>
                         </div>
                     </div>

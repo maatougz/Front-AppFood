@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -38,7 +38,22 @@ export class RecipeserviceService {
     return this.http.get(this.host + '/user/recipe/'+id , {headers: new HttpHeaders({'Authorization': this.jwtToken})})
     .pipe(map(resp=>resp));
   }
+
+  getSearchRecipe(search:string){
+    if(this.jwtToken === null) this.loadToken();
+    return this.http.get(this.host + '/user/searchRecipe/'+search , {headers: new HttpHeaders({'Authorization': this.jwtToken})})
+    .pipe(map(resp=>resp));
+  }
   
+  getADSearchRecipe(ing1:string,ing2:string,ing3:string){
+    if(this.jwtToken === null) this.loadToken();
+    let params = new HttpParams()
+    .set('ing1', ing1)
+    .set('ing2', ing2) 
+    .set('ing3', ing3);
+    return this.http.get(this.host + '/user/advancedRecipe',  {headers : new HttpHeaders({'Authorization' : this.jwtToken}),params})
+    .pipe(map(resp=>resp));
+  }
 
   /*admin */
 

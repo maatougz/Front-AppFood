@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RestoserviceService } from 'src/app/services/restoservice.service';
 
 @Component({
@@ -11,7 +11,7 @@ export class RestoComponent implements OnInit {
   restos:any;
   listresto:any;
   id:number;
-  constructor(public restoservice: RestoserviceService, public activatedRoute : ActivatedRoute) { 
+  constructor(public restoservice: RestoserviceService, public activatedRoute : ActivatedRoute, private router: Router) { 
     this.id=activatedRoute.snapshot.params['id'];
   }
 
@@ -27,13 +27,10 @@ export class RestoComponent implements OnInit {
 			});
   }
 
-  onSearchResto(search:string){
-    this.restoservice.getSearchResto(search)
-    .subscribe(data=>{
-      this.listresto=data;
-      console.log(data);
-    },err=>{
-      console.log(err);
-    })
+  onSearchResto({searchTerm}: {searchTerm: string;}) {
+    console.log(searchTerm)
+    this.restoservice.loadToken();
+    this.id=this.activatedRoute.snapshot.params['id'];
+    this.router.navigate([`/user/resultresto`], {queryParams: {search: searchTerm}})
   }
 }

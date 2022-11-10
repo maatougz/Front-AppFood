@@ -1,0 +1,42 @@
+<section class="ftco-section bg-light" >
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-5">
+          <div class="wrapper">
+            <div class="row no-gutters">
+                <div class="contact-wrap w-100 p-md-5 p-4">
+                  <h3 class="mb-4">Search Recipe</h3>
+
+                  <form  class="contactForm" #f="ngForm" class="search" (ngSubmit)="onSearchRecipeAD(f.value)">                  
+                        
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <input type="search" class="form-control" ngModel name="ing1" id="ing1" placeholder="ingredient 1" required>
+                        </div>
+                      </div>
+                     <div class="col-md-12">
+                        <div class="form-group">
+                          <input type="search" class="form-control"  ngModel name="ing2" id="ing2" placeholder="ingredient 2" >
+                        </div>
+                      </div><div class="col-md-12">
+                        <div class="form-group">
+                          <input type="search" class="form-control"  ngModel name="ing3" id="ing3" placeholder="ingredient 3" >
+                        </div>
+                      </div>
+                        
+
+                      <div class="col-md-12">
+                        <div class="form-group">	
+                            <input type="submit" value="Search" class="btn btn-primary sign-up" />
+                          <div class="submitting"></div>
+                        </div>
+                      </div>
+                  </form>
+                </div>
+              </div>
+              </div>
+              </div>
+            </div>
+          </div>
+       
+  </section>

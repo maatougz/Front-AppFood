@@ -59,6 +59,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RestoComponent } from './user/resto/resto.component';
 import { RestosbysearchComponent } from './user/resto/restosbysearch/restosbysearch.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { RecipebysearchComponent } from './user/recipe/recipebysearch/recipebysearch.component';
+import { AdsearchrecipeComponent } from './user/recipe/adsearchrecipe/adsearchrecipe.component';
+import { RecipebyadvacedsearchComponent } from './user/recipe/recipebyadvacedsearch/recipebyadvacedsearch.component';
 
 
 
@@ -120,6 +124,9 @@ import { RestosbysearchComponent } from './user/resto/restosbysearch/restosbysea
     AccountComponent,
     RestoComponent,
     RestosbysearchComponent,
+    RecipebysearchComponent,
+    AdsearchrecipeComponent,
+    RecipebyadvacedsearchComponent,
   
 
 
@@ -129,7 +136,8 @@ import { RestosbysearchComponent } from './user/resto/restosbysearch/restosbysea
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    Ng2SearchPipeModule
  
     
   ],

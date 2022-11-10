@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RecipeserviceService } from 'src/app/services/recipeservice.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { RecipeserviceService } from 'src/app/services/recipeservice.service';
 export class RecipelistComponent implements OnInit {
 
   recipes:any;
-  constructor(private router : Router, public recipeservice: RecipeserviceService) { }
+  constructor(private router : Router, public recipeservice: RecipeserviceService, public activatedRoute : ActivatedRoute) { }
 
   ngOnInit(): void {
     this.recipeservice.loadToken();
@@ -22,6 +22,12 @@ export class RecipelistComponent implements OnInit {
 			}, error => {
 				console.log(error)
 			});
+  }
+
+  onSearchRecipe({searchTerm}: {searchTerm: string;}) {
+    console.log(searchTerm)
+    this.recipeservice.loadToken();
+    this.router.navigate([`/user/resultrecipe`], {queryParams: {search: searchTerm}})
   }
 
   addrecipe(){
