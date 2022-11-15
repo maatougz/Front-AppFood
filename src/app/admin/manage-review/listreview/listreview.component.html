@@ -22,7 +22,6 @@
             <!-- /.card-header -->
             <div class="card-body">
                 <table class="table table-bordered">
-                    <thead>
                         <tr class="thead-light">
                             <th rowspan="2">Recipe(Title)</th>
                             <th colspan="9">Reviews</th>
@@ -37,17 +36,18 @@
                             <th>repport</th>
                             <th>Delete</th>
                         </tr>
-                    </thead>
-                    <tbody>
+                        <tr >
                         <div *ngFor="let recipe of recipes">
-                            <td rowspan="recipe.size()+1" >{{recipe.title}}</td>
-                            <tr  *ngFor="let review of reviews">
+                            <div  *ngFor="let review of recipe.reviews">
+                            <td [attr.colspan]="2"
+                            [attr.rowspan]="review.lenght" >{{recipe.title}}</td>
+                            
                                 <td>{{review.userpub}}</td>
                                 <td>{{review.dateofcreation}}</td>
                                 <td>{{review.comment}}</td>
                                 <td>
                                     <img class="card-img-top img-responsive"
-                                style="background-image: url(http://localhost:9595/visitor/imagebyreview/{{review.idReview}}) ;background-size:100px; background-position: center; background-repeat: no-repeat; height: 100px;">
+                                    style="background-image: url(http://localhost:9595/visitor/imagebyreview/{{review.idReview}}) ;background-size:100px; background-position: center; background-repeat: no-repeat; height: 100px;">
                             
                                 </td>
                                 <td>{{review.nblike}}</td>
@@ -56,9 +56,11 @@
                                 <td>
                                     <button  (click)="delreview(review.idReview)" class="btn btn-block btn-danger btn-sm">Delete</button>
                                 </td>
-                            </tr>
+                            
+                            </div>
+                        
                         </div>
-                    </tbody>
+                   </tr>
                 </table>
             </div>
             <!-- /.card-body -->

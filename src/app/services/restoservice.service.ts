@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ResolveData } from '@angular/router';
 import { map, Observable } from 'rxjs';
@@ -22,21 +22,31 @@ export class RestoserviceService {
   }
   
   getrestobybrand(id:any){
-    if(this.jwtToken === null) this.loadToken();
-    return this.http.get(this.host + '/user/restos/'+id , {headers: new HttpHeaders({'Authorization': this.jwtToken})})
-    .pipe(map(resp=>resp));
+    
+    return this.http.get(this.host + '/visitor/restos/'+id )
+    
   }
 
   getRestosUser() {
-    console.log(this.jwtToken)
-    if(this.jwtToken === null) this.loadToken();
-    return this.http.get(this.host + '/visitor/restos', {headers : new HttpHeaders({'Authorization' : this.jwtToken})})
-    .pipe(map(resp=>resp));
+    
+    return this.http.get(this.host + '/visitor/restos')
+    
   }
 
   getSearchResto(search:string){
     if(this.jwtToken === null) this.loadToken();
     return this.http.get(this.host + '/user/searchResto/'+search , {headers: new HttpHeaders({'Authorization': this.jwtToken})})
+    .pipe(map(resp=>resp));
+  }
+
+
+  getADSearchResto(price:string,location:string,dishname:string){
+    if(this.jwtToken === null) this.loadToken();
+    let params = new HttpParams()
+    .set('price', price)
+    .set('location', location) 
+    .set('dishname', dishname);
+    return this.http.get(this.host + '/user/advancedResto',  {headers : new HttpHeaders({'Authorization' : this.jwtToken}),params})
     .pipe(map(resp=>resp));
   }
 

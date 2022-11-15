@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { PlaceCatserviceService } from 'src/app/services/place-catservice.service';
 import { RestoserviceService } from 'src/app/services/restoservice.service';
 
 @Component({
@@ -11,12 +12,22 @@ export class RestoComponent implements OnInit {
   restos:any;
   listresto:any;
   id:number;
-  constructor(public restoservice: RestoserviceService, public activatedRoute : ActivatedRoute, private router: Router) { 
+  listplacecat:any;
+  constructor(public restoservice: RestoserviceService, public activatedRoute : ActivatedRoute, private router: Router,public placecatservice : PlaceCatserviceService) { 
     this.id=activatedRoute.snapshot.params['id'];
   }
 
   ngOnInit(): void {
-    this.restoservice.loadToken();
+
+    this.placecatservice.getPlacesCatUser()
+    .subscribe(data => {
+      console.log(data)
+      this.listplacecat = data;
+      
+    }, error => {
+      console.log(error)
+    });
+
     this.restoservice.getrestobybrand(this.id)
 			.subscribe(data => {
         console.log(data)

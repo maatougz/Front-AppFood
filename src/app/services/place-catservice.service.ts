@@ -20,7 +20,10 @@ export class PlaceCatserviceService {
     
   }
   
- 
+  getPlacesCatUser(){
+    return this.http.get(this.host + '/visitor/placescat' );
+  }
+  
   getPlacesCat() {
     if(this.authService.jwtToken === null) this.authService.loadToken();
     console.log(this.jwtToken)

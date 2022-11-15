@@ -63,6 +63,9 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { RecipebysearchComponent } from './user/recipe/recipebysearch/recipebysearch.component';
 import { AdsearchrecipeComponent } from './user/recipe/adsearchrecipe/adsearchrecipe.component';
 import { RecipebyadvacedsearchComponent } from './user/recipe/recipebyadvacedsearch/recipebyadvacedsearch.component';
+import { MenuComponent } from './user/resto/menu/menu.component';
+import { AdsearchrestoComponent } from './user/resto/adsearchresto/adsearchresto.component';
+import { AdresultrestoComponent } from './user/resto/adresultresto/adresultresto.component';
 
 
 
@@ -127,6 +130,9 @@ import { RecipebyadvacedsearchComponent } from './user/recipe/recipebyadvacedsea
     RecipebysearchComponent,
     AdsearchrecipeComponent,
     RecipebyadvacedsearchComponent,
+    MenuComponent,
+    AdsearchrestoComponent,
+    AdresultrestoComponent,
   
 
 

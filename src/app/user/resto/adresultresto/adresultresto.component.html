@@ -2,19 +2,10 @@
     <div class="container-fluid">
         <div class=" row justify-content-center mb-5">
             <div class="col-md-8 text-center heading-section">
-                <h2 class="mb-4">Restaurants</h2>
+                <h2 class="mb-4">Dishes</h2>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-3">
-                <div class="tabulation mt-4 ">
-                    <form #f="ngForm" class="search" (ngSubmit)="onSearchResto(f.value)">
-                            <input type="search" class="form-control" ngModel name="searchTerm" placeholder="Search for a restaurant"  >     <!-- barre de recherche -->
-                            <input type="submit" value="Search" class="btn btn-primary sign-up" />
-                    </form>
-                </div>
-            </div>
-        </div>
+        
         <div class="row">
             <div class="col-md-3">
                 <div class="tabulation mt-4 ">
@@ -24,8 +15,8 @@
                        <li class="nav-item text-left">
                         <a class="nav-link py-4"><strong> <i class="fa fa-align-justify mr-3" aria-hidden="true"></i>Place Category</strong></a>
                       </li>
-                      <li class="nav-item text-left" *ngFor="let place of listplacecat">
-                        <a class="nav-link active py-4" th:href="@{/restos/cat/{category}(category=${category.placecategory})}" th:each="category : ${categories}" th:value="${category.placecategory}"  th:text="${category.placecategory}"><span class="fa fa-mobile mr-3" aria-hidden="true"> {{place.pcatname}}</span> </a>
+                      <li class="nav-item text-left">
+                        <a class="nav-link active py-4" th:href="@{/restos/cat/{category}(category=${category.placecategory})}" th:each="category : ${categories}" th:value="${category.placecategory}"  th:text="${category.placecategory}"><span class="fa fa-mobile mr-3" aria-hidden="true"></span> </a>
                       </li>
                     </ul>
                   </div>
@@ -34,35 +25,47 @@
                 <div class="tab-content col-md-10 text-center">
                     <div class="tab-pane container p-0 active" id="services-1">
                         <div class="row" >
-                            <div class="row d-flex">
+                            <div class="row d-flex justify-content-center">
                                 <!--<div class="col-md-4 d-flex " th:if="${#lists.isEmpty(brands)}">
                                     <div class="blog-entry align-self-stretch">
                                         <h1>No brand</h1>
                                     </div>
                                 </div>-->
-                                <div class="col-md-4 d-flex " *ngFor="let resto of restos">
+                                <div class="col-md-4 d-flex ml-auto " *ngFor="let dish of results">
                                     <div class="blog-entry align-self-stretch">
-                                        <a routerLink="/user/menu/{{resto.idresto}}"> 
-                                            <img alt="" style="background-image: url(http://localhost:9595/visitor/imagebybrand/{{this.id}}); background-size: cover; background-repeat: no-repeat;background-position: center;" style="width: 200px; height: 200px; ">
-                                        </a>
+                                        <a > 
+                                            
+                                                <img alt="" style="background-image: url(http://localhost:9595/visitor/imagebydish/{{dish.idDish}}); background-size: cover; background-repeat: no-repeat;background-position: center;width: 200px; height: 200px; ">
+                                            </a> 
+                                        
                                         <div class="text p-2">
                                             <div class="posted mb-3 d-flex">
                                                 <div class="desc pl-3">
-                                                    <span >Location: {{resto.location}} </span>
+                                                    <span >Location: {{dish.restoname}} </span>
                                                 </div>
                                             </div>
                                             <h3 class="heading">
-                                                <a >{{resto.restoname}}
+                                                <a >{{dish.dishname}}
                                                 </a>
                                                 <div style="float:right">
                                                     <!-- 
                                                     <small   th:text="${product.avisss.size}" ></small> 
                                                     -->
-                                                    <small >{{resto.menu.length}}</small><small> Dish(s)</small>
+                                                    <small >{{dish.price}}</small><small> DT </small>
                                                 </div>
                                             </h3>
-                                            
+                                            <!-- 
+                                            <center>  <div class="desc " style="color : #d9ba2b;">
+                                            <small class="fa fa-star"></small>
+                                            <small class="fa fa-star"></small>
+                                            <small class="fa fa-star"></small>
+                                            <small class="fa fa-star"></small>
+                                            <small class="fa fa-star"></small>
+                                            <a th:value="${product.rate}" th:text="${product.rate}"></a>
+                                            </div>
+                                            </center> -->
                                         </div>
+                                    
                                     </div>
                                 </div>
                             </div>
@@ -88,3 +91,4 @@
         </div>
     </div>
 </section>
+

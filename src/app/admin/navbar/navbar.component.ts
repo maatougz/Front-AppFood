@@ -19,10 +19,11 @@ export class NavbarComponent implements OnInit {
     this.getCurrentUserNavbar();
   }
 
+  
   getCurrentUserNavbar() {
     this.userService.loadToken();
     this.userService.getTokenInfo()
-    this.userService.getUserByUsername(this.username)
+    this.userService.getUserByUsernameAdmin(this.username)
     .subscribe(data=>{
       this.currentUser=data;
       console.log(data);

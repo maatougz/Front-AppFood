@@ -5,26 +5,24 @@
           <div class="wrapper">
             <div class="row no-gutters">
                 <div class="contact-wrap w-100 p-md-5 p-4">
-                  <h3 class="mb-4">Find your customized recipe</h3>
-
-                  <form  class="contactForm" #f="ngForm" class="search" (ngSubmit)="onSearchRecipeAD(f.value)">                  
+                  <h3 class="mb-4">Find the perfect option for you</h3>
+                  <form  class="contactForm" #f="ngForm" class="search" (ngSubmit)="onSearchRestoAD(f.value)">                  
                         
                       <div class="col-md-12">
                         <div class="form-group">
-                          <input type="search" class="form-control" ngModel name="ing1" id="ing1" placeholder="ingredient 1" required>
+                          <input type="search" class="form-control" ngModel name="price" id="price" placeholder="price" >
                         </div>
                       </div>
                      <div class="col-md-12">
                         <div class="form-group">
-                          <input type="search" class="form-control"  ngModel name="ing2" id="ing2" placeholder="ingredient 2" >
+                          <input type="search" class="form-control"  ngModel name="location" id="location" placeholder="location" >
                         </div>
                       </div><div class="col-md-12">
                         <div class="form-group">
-                          <input type="search" class="form-control"  ngModel name="ing3" id="ing3" placeholder="ingredient 3" >
+                          <input type="search" class="form-control"  ngModel name="dishname" id="dishname" placeholder="dishname" >
                         </div>
                       </div>
                         
-
                       <div class="col-md-12">
                         <div class="form-group">	
                             <input type="submit" value="Search" class="btn btn-primary sign-up" />

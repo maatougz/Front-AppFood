@@ -8,13 +8,11 @@
         <div class="row">
             <div class="col-md-3">
                 <div class="tabulation mt-4 ">
-                    <form class="search" action="/searchResto">
-                            <input type="search" class="form-control" placeholder="Entrez votre recherche" name="search" required>     <!-- barre de recherche -->
-                            <input type="submit" class="btn btn-primary sign-up" value="Recherche brand"  >     <!-- bouton de validation -->
-                    </form>
+                    <a routerLink="/user/ADSearchResto"> <h5 >Advanced Search Restaurant</h5></a>
                 </div>
             </div>
         </div>
+        <hr style="height:0.3px;color:#d9ba2b;background-color:#d9ba2b;">
         <div class="row">
             <div class="col-md-3">
                 <div class="tabulation mt-4 ">
@@ -24,8 +22,8 @@
                        <li class="nav-item text-left">
                         <a class="nav-link py-4"><strong> <i class="fa fa-align-justify mr-3" aria-hidden="true"></i>Place Category</strong></a>
                       </li>
-                      <li class="nav-item text-left">
-                        <a class="nav-link active py-4" th:href="@{/restos/cat/{category}(category=${category.placecategory})}" th:each="category : ${categories}" th:value="${category.placecategory}"  th:text="${category.placecategory}"><span class="fa fa-mobile mr-3" aria-hidden="true"></span> </a>
+                      <li class="nav-item text-left" *ngFor="let place of listplacecat">
+                        <a class="nav-link active py-4" th:href="@{/restos/cat/{category}(category=${category.placecategory})}" th:text="${category.placecategory}"><span class="fa fa-mobile mr-3" > {{place.pcatname}}</span> </a>
                       </li>
                     </ul>
                   </div>
@@ -43,7 +41,7 @@
                                 <div class="col-md-4 d-flex " *ngFor="let brand of brands">
                                     <div class="blog-entry align-self-stretch">
                                         <a routerLink="/user/restos/{{brand.idbrand}}"> 
-                                            <img alt="" style="background-image: url(http://localhost:9595/visitor/imagebybrand/{{brand.idbrand}})" style="width: 200px; height: 200px; ">
+                                            <img alt="" style="background-image: url(http://localhost:9595/visitor/imagebybrand/{{brand.idbrand}}); background-size: cover; width: 280px; height: 250px; background-repeat: no-repeat;background-position: center;">
                                         </a>
                                         <div class="text p-2">
                                             <div class="posted mb-3 d-flex">
@@ -52,7 +50,7 @@
                                                 </div>
                                             </div>
                                             <h3 class="heading">
-                                                <a >{{brand.brandname}}
+                                                <a routerLink="/user/restos/{{brand.idbrand}}" >{{brand.brandname}}
                                                 </a>
                                                 <div style="float:right">
                                                     <!-- 

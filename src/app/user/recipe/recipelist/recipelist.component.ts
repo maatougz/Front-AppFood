@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { DishCatserviceService } from 'src/app/services/dish-catservice.service';
 import { RecipeserviceService } from 'src/app/services/recipeservice.service';
 
 @Component({
@@ -8,11 +9,22 @@ import { RecipeserviceService } from 'src/app/services/recipeservice.service';
   styleUrls: ['./recipelist.component.css']
 })
 export class RecipelistComponent implements OnInit {
-
+  listdishcat:any;
   recipes:any;
-  constructor(private router : Router, public recipeservice: RecipeserviceService, public activatedRoute : ActivatedRoute) { }
+  constructor(private router : Router, public recipeservice: RecipeserviceService, public activatedRoute : ActivatedRoute,
+    public dishcatservice:DishCatserviceService) { }
 
   ngOnInit(): void {
+
+    this.dishcatservice.getDishesCatUser()
+    .subscribe(data => {
+      console.log(data)
+      this.listdishcat = data;
+      
+    }, error => {
+      console.log(error)
+    });
+    
     this.recipeservice.loadToken();
     this.recipeservice.getRecipesUser()
 			.subscribe(data => {

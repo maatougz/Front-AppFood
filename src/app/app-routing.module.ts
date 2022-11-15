@@ -42,6 +42,9 @@ import { RecipeaddComponent } from './user/recipe/recipeadd/recipeadd.component'
 import { RecipebyadvacedsearchComponent } from './user/recipe/recipebyadvacedsearch/recipebyadvacedsearch.component';
 import { RecipebysearchComponent } from './user/recipe/recipebysearch/recipebysearch.component';
 import { RecipelistComponent } from './user/recipe/recipelist/recipelist.component';
+import { AdresultrestoComponent } from './user/resto/adresultresto/adresultresto.component';
+import { AdsearchrestoComponent } from './user/resto/adsearchresto/adsearchresto.component';
+import { MenuComponent } from './user/resto/menu/menu.component';
 import { RestoComponent } from './user/resto/resto.component';
 import { RestosbysearchComponent } from './user/resto/restosbysearch/restosbysearch.component';
 import { UserComponent } from './user/user.component';
@@ -93,6 +96,9 @@ const routes: Routes = [
       {path: 'account', component: AccountComponent,},
       {path: 'resultresto', component: RestosbysearchComponent,},
       {path: 'restos/:id', component: RestoComponent,},
+      {path: 'menu/:id', component: MenuComponent,},
+      {path: 'ADSearchResto', component: AdsearchrestoComponent,},
+      {path: 'resultrestoad', component: AdresultrestoComponent,},
     ],
   },
   { path: 'login', component: LoginComponent},

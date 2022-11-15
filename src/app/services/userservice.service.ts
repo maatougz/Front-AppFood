@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams, HttpResponse } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
 import { AuthenticationService } from './authentication.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
@@ -70,6 +70,13 @@ getTokenInfo(){
     .pipe(map(resp=>resp)); 
     }
 
+    /********* admin *********/
+    getUserByUsernameAdmin(username:string) {
+      username=this.username;
+      console.log(username);
+      return this.http.get("http://localhost:9595/Admin/profile/" + username, {headers: new HttpHeaders({'Authorization':this.jwtToken})})
+      .pipe(map(resp=>resp)); 
+      }
   deleteUsers(id:number) {
     if(this.authService.jwtToken === null) this.loadToken();
     return this.http.delete(this.host + '/admin/deluser/'+id , {headers: new HttpHeaders({'Authorization': this.jwtToken})})
@@ -102,6 +109,22 @@ getTokenInfo(){
     if(this.authService.jwtToken === null) this.authService.loadToken();
     return this.http.post(this.host + "/admin/addrole", role, {headers : new HttpHeaders({'Authorization' : this.jwtToken})})
     .pipe(map(resp=>resp));
+    
+  }
+
+
+
+  /* *********visitor contact******* */
+
+
+  saveContact(name:string,email:string,subject:string,message:string): Observable<any>{
+    let params = new HttpParams()
+    .set('email', email)
+    .set('message', message)
+    .set('subject', subject) 
+    .set('name', name);
+    console.log(params)
+    return this.http.get(this.host + '/visitor/contact', {params});
     
   }
 }

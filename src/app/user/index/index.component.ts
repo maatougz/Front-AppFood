@@ -1,3 +1,4 @@
+import { SlicePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Recipe } from 'src/app/models/recipe';
@@ -19,13 +20,15 @@ export class IndexComponent implements OnInit {
   recipes:any;
   restos:any;
   brands:any;
+  latestbrands:any;
+  latestrecipes:any;
   users:any;
   reviews:any;
   constructor( public recipeservice : RecipeserviceService, public userService: UserserviceService,
     public restoservice: RestoserviceService, public brandservice: BrandserviceService, public reviewservice : ReviewserviceService) { }
 
   ngOnInit(): void {
-    this.restoservice.loadToken();
+    
     this.restoservice.getRestosUser()
 			.subscribe(data => {
         console.log(data)
@@ -34,22 +37,23 @@ export class IndexComponent implements OnInit {
 			}, error => {
 				console.log(error)
 			});
-    this.recipeservice.loadToken();
+    
     this.recipeservice.getRecipesUser()
 			.subscribe(data => {
         console.log(data)
 				this.recipes = data;
-        
+				this.latestrecipes=this.recipes.slice(0,3)
 			}, error => {
 				console.log(error)
 			});
 
-    this.brandservice.loadToken();
+    
     this.brandservice.getBrandsUser()
-			.subscribe(data => {
-        console.log(data)
-				this.brands = data;
-        
+			.subscribe(res => {
+        console.log(res)
+				this.brands = res;
+				this.latestbrands=this.brands.slice(0,4)
+				
 			}, error => {
 				console.log(error)
 			});
@@ -64,7 +68,7 @@ export class IndexComponent implements OnInit {
 				console.log(error)
 			});
 
-      this.reviewservice.loadToken();
+      
       this.reviewservice.getReviewsindex()
 			.subscribe(data => {
         console.log(data)

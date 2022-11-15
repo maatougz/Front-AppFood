@@ -25,9 +25,7 @@ export class DishCatserviceService {
   }
 
   getDishesCatUser() {
-    if(this.authService.jwtToken === null) this.authService.loadToken();
-    return this.http.get(this.host + '/user/dishescat' , {headers : new HttpHeaders({'Authorization' : this.jwtToken})})
-    .pipe(map(resp=>resp));
+    return this.http.get(this.host + '/visitor/dishescat');
   }
 
   getDishCat(id:any){

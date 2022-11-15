@@ -28,9 +28,9 @@ export class RecipeserviceService {
     .pipe(map(resp=>resp));
   }
   getRecipesUser(){
-    if(this.authService.jwtToken === null) this.loadToken();
-    return this.http.get(this.host + '/user/recipes', {headers : new HttpHeaders({'Authorization' : this.jwtToken})})
-    .pipe(map(resp=>resp));
+    
+    return this.http.get(this.host + '/visitor/recipes')
+    
   }
   
   getRecipeuser(id:any){

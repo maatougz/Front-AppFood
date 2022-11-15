@@ -9,7 +9,6 @@ import { RecipeserviceService } from 'src/app/services/recipeservice.service';
 })
 export class RecipebyadvacedsearchComponent implements OnInit {
 
-  x:any;
   ing1:any
   ing2 = ""
   ing3 = ""

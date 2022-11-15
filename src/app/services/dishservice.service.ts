@@ -47,5 +47,12 @@ export class DishserviceService {
     .pipe(map(resp=>resp));
   }
 
+
+
+  getdishbyresto(id:any){
+    
+    return this.http.get(this.host + '/visitor/menu/'+id )
+    
+  }
   
 }
